@@ -80,15 +80,9 @@ void Menu:: online(Grid* grid) {
                 cin.ignore();
                 for(int i = 0; i < choice; i++){
 
-                    recv
 
 
                 }
-
-
-
-
-
 
 
 
