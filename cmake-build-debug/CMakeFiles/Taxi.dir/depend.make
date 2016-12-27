@@ -591,6 +591,7 @@ CMakeFiles/Taxi.dir/Menu.cpp.o: ../Point.h
 CMakeFiles/Taxi.dir/Menu.cpp.o: ../StandardCab.h
 CMakeFiles/Taxi.dir/Menu.cpp.o: ../State.h
 CMakeFiles/Taxi.dir/Menu.cpp.o: ../TaxiCenter.h
+CMakeFiles/Taxi.dir/Menu.cpp.o: ../TaxiServer.h
 CMakeFiles/Taxi.dir/Menu.cpp.o: ../Trip.h
 
 CMakeFiles/Taxi.dir/Parser.cpp.o: /home/liad/.linuxbrew/Cellar/boost/1.62.0/include/boost/any.hpp
@@ -883,6 +884,9 @@ CMakeFiles/Taxi.dir/TaxiCenter.cpp.o: ../TaxiCenter.cpp
 CMakeFiles/Taxi.dir/TaxiCenter.cpp.o: ../TaxiCenter.h
 CMakeFiles/Taxi.dir/TaxiCenter.cpp.o: ../Trip.h
 CMakeFiles/Taxi.dir/TaxiCenter.cpp.o: ../Waze.h
+
+CMakeFiles/Taxi.dir/TaxiServer.cpp.o: ../TaxiServer.cpp
+CMakeFiles/Taxi.dir/TaxiServer.cpp.o: ../TaxiServer.h
 
 CMakeFiles/Taxi.dir/Test/BFSTest.cpp.o: ../lib/googletest-master/googlemock/include/gmock/gmock-matchers.h
 CMakeFiles/Taxi.dir/Test/BFSTest.cpp.o: ../lib/googletest-master/googlemock/include/gmock/internal/custom/gmock-matchers.h

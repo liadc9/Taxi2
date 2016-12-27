@@ -8,7 +8,12 @@
 #include "State.h"
 #include "Grid.h"
 #include <boost/any.hpp>
+#include <sys/socket.h>
 #include "ITaxiCab.h"
+#include "TaxiServer.h"
+#include <boost/archive/text_oarchive.hpp>
+#include <boost/archive/text_iarchive.hpp>
+#include <fstream>
 
 using namespace std;
 
@@ -26,6 +31,7 @@ double tariff;
 int taxi_type;
 char manufacturer;
 char color;
+
 
 
 
@@ -66,6 +72,35 @@ void Menu:: online(Grid* grid) {
         switch (choice) {
             // create driver
             case 1 : {
+
+
+                TaxiServer* socket = new TaxiServer();
+
+                cin >> choice;
+                cin.ignore();
+                for(int i = 0; i < choice; i++){
+
+                    recv
+
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 getline(cin, information);
                 // parse the data given
                 parsedData = parse.DataSplit(information);

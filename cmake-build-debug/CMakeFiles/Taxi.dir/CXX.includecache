@@ -2447,8 +2447,12 @@ Grid.h
 /home/liad/ClionProjects/Taxi/Grid.h
 boost/any.hpp
 -
+sys/socket.h
+-
 ITaxiCab.h
 /home/liad/ClionProjects/Taxi/ITaxiCab.h
+TaxiServer.h
+/home/liad/ClionProjects/Taxi/TaxiServer.h
 
 /home/liad/ClionProjects/Taxi/Menu.h
 Grid.h
@@ -2557,6 +2561,26 @@ StandardCab.h
 /home/liad/ClionProjects/Taxi/StandardCab.h
 vector
 -
+
+/home/liad/ClionProjects/Taxi/TaxiServer.cpp
+TaxiServer.h
+/home/liad/ClionProjects/Taxi/TaxiServer.h
+iostream
+-
+sys/socket.h
+-
+stdio.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+string.h
+-
+
+/home/liad/ClionProjects/Taxi/TaxiServer.h
 
 /home/liad/ClionProjects/Taxi/Test/BFSTest.cpp
 gmock/gmock-matchers.h
