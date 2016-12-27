@@ -1,6 +1,7 @@
 /**
  * The following class hold all operation of the Taxi center
  */
+//gal is the king
 
 #include "TaxiCenter.h"
 #include "StandardCab.h"
