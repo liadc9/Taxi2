@@ -16,12 +16,15 @@ private:
     int numOfPassengers;
     double tariff;
     int meter_passed;
+    int timeOfStart;
+
+private:
     State* start;
     State* stop;
     Grid* grid;
 public:
 
-    Trip(int id, State* start, State* stop ,Grid* grid, int passengers, double tariff);
+    Trip(int id, State* start, State* stop ,Grid* grid, int passengers, double tariff,int timeOfStart);
     Trip(State* start1, State* stop1, Grid* grid1);
     virtual State* getStart();
     virtual State* getdest();
@@ -34,6 +37,10 @@ public:
     double getTariff();
 
     int getMeter_passed();
+
+    int getTimeOfStart() ;
+
+    void setTimeOfStart(int timeOfStart);
 
     void setRide_id(int ride_id);
 

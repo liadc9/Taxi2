@@ -128,9 +128,9 @@ void Menu:: online(Grid* grid) {
 
                 State *start = new State(Point(xStart, yStart), NULL, false);
                 State *end = new State(Point(xEnd, yEnd), NULL, false);
-
+//change 1 to the real time of start that we get from the terminal
                 // create trip accroding to all info
-                Trip *trip = new Trip(id, start, end, grid, numPassengers, tariff);
+                Trip *trip = new Trip(id, start, end, grid, numPassengers, tariff,1);
                 taxiCenter->AddTrip(trip);
                 break;
             }

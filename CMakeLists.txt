@@ -7,16 +7,16 @@ include_directories(lib/googletest-master/googletest/include)
 include_directories(lib/googletest-master/googlemock/include)
 
 
-include_directories("/home/liad/.linuxbrew/Cellar/boost/1.62.0/include")
-set(BOOST_ROOT "/home/liad/.linuxbrew/Cellar/boost/1.62.0/include")
-set(Boost_Path "/home/liad/.linuxbrew/Cellar/boost/1.62.0/include")
+include_directories("/home/gal/.linuxbrew/Cellar/boost/1.62.0/include")
+set(BOOST_ROOT "/home/gal/.linuxbrew/Cellar/boost/1.62.0/include")
+set(Boost_Path "/home/gal/.linuxbrew/Cellar/boost/1.62.0/include")
 
 set(Boost_INCLUDE_DIR "${Boost_Path}/boost")
 
-#include_directories("/Users/liad/Downloads/boost_1_62_0")
+#include_directories("/Users/gal/Downloads/boost_1_62_0")
 
-#set(BOOST_ROOT "/Users/liad/Downloads/boost_1_62_0")
-#set(Boost_Path "/Users/liad/Downloads/boost_1_62_0")
+#set(BOOST_ROOT "/Users/gal/Downloads/boost_1_62_0")
+#set(Boost_Path "/Users/gal/Downloads/boost_1_62_0")
 
 #set(Boost_INCLUDE_DIR "${Boost_Path}/boost_1_62_0")
 

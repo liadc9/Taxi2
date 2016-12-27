@@ -16,13 +16,14 @@
  * @param passengers - passengers in trip
  * @param tariff - cost of trip
  */
-Trip::Trip(int id, State* start1, State* stop1, Grid* grid1, int passengers, double tariff){
+Trip::Trip(int id, State* start1, State* stop1, Grid* grid1, int passengers, double tariff, int timeOfStart){
     this->ride_id = id;
     this->start = start1;
     this->stop = stop1;
     this->grid = grid1;
     this->numOfPassengers = passengers;
     this->tariff = tariff;
+    this->timeOfStart = timeOfStart;
 }
 /**
  * contructor of trip
@@ -133,4 +134,12 @@ void Trip::setStop(State *stop) {
  */
 void Trip::setGrid(Grid *grid) {
     Trip::grid = grid;
+}
+
+int Trip::getTimeOfStart() {
+    return timeOfStart;
+}
+
+void Trip::setTimeOfStart(int timeOfStart) {
+    Trip::timeOfStart = timeOfStart;
 }

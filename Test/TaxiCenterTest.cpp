@@ -29,7 +29,7 @@ protected:
         state1 = new State(*p1,NULL,true);
         state2 = new State(*p2,NULL,false);
         grid = new Grid(5,5);
-        trip = new Trip(1,state1,state2,grid,2 ,40);
+        trip = new Trip(1,state1,state2,grid,2 ,40,1);
         cab = new StandardCab(12345, 0,RED, TESLA, 1, 1, state1,false);
         luxus = new LuxuryCab(12345, 0,WHITE, HONDA, 2, 2, state2,false);
         customer = new Passenger(state1,state2);
