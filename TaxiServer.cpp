@@ -34,8 +34,7 @@ int server() {
     //receiving data
     struct sockaddr_in from;
     unsigned int from_len = sizeof(struct sockaddr_in);
-    char buffer
-    [4096];
+    char buffer[4096];
     int bytes = recvfrom(sock, buffer, sizeof(buffer), 0, (struct sockaddr *) &from, &from_len);
     // receiving data check
     if(bytes < 0) {
@@ -48,4 +47,5 @@ int server() {
         perror("error writing to socket");
     }
     close(sock);
-    return 0; }
+    return 0;
+}
