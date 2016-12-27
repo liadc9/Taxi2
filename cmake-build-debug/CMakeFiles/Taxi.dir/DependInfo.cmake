@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/liad/ClionProjects/Taxi/StandardCab.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/StandardCab.cpp.o"
   "/home/liad/ClionProjects/Taxi/State.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/State.cpp.o"
   "/home/liad/ClionProjects/Taxi/TaxiCenter.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/TaxiCenter.cpp.o"
+  "/home/liad/ClionProjects/Taxi/TaxiServer.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/TaxiServer.cpp.o"
   "/home/liad/ClionProjects/Taxi/Test/BFSTest.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Test/BFSTest.cpp.o"
   "/home/liad/ClionProjects/Taxi/Test/DriverTest.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Test/DriverTest.cpp.o"
   "/home/liad/ClionProjects/Taxi/Test/GridTest.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Test/GridTest.cpp.o"

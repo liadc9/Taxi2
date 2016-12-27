@@ -624,6 +624,33 @@ TaxiCenter.cpp.s:
 	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/TaxiCenter.cpp.s
 .PHONY : TaxiCenter.cpp.s
 
+TaxiServer.o: TaxiServer.cpp.o
+
+.PHONY : TaxiServer.o
+
+# target to build an object file
+TaxiServer.cpp.o:
+	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/TaxiServer.cpp.o
+.PHONY : TaxiServer.cpp.o
+
+TaxiServer.i: TaxiServer.cpp.i
+
+.PHONY : TaxiServer.i
+
+# target to preprocess a source file
+TaxiServer.cpp.i:
+	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/TaxiServer.cpp.i
+.PHONY : TaxiServer.cpp.i
+
+TaxiServer.s: TaxiServer.cpp.s
+
+.PHONY : TaxiServer.s
+
+# target to generate assembly for a file
+TaxiServer.cpp.s:
+	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/TaxiServer.cpp.s
+.PHONY : TaxiServer.cpp.s
+
 Test/BFSTest.o: Test/BFSTest.cpp.o
 
 .PHONY : Test/BFSTest.o
@@ -1010,6 +1037,9 @@ help:
 	@echo "... TaxiCenter.o"
 	@echo "... TaxiCenter.i"
 	@echo "... TaxiCenter.s"
+	@echo "... TaxiServer.o"
+	@echo "... TaxiServer.i"
+	@echo "... TaxiServer.s"
 	@echo "... Test/BFSTest.o"
 	@echo "... Test/BFSTest.i"
 	@echo "... Test/BFSTest.s"

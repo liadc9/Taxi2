@@ -428,6 +428,12 @@
 		<Unit filename="/home/liad/ClionProjects/Taxi/TaxiCenter.h">
 			<Option target="Taxi"/>
 		</Unit>
+		<Unit filename="/home/liad/ClionProjects/Taxi/TaxiServer.cpp">
+			<Option target="Taxi"/>
+		</Unit>
+		<Unit filename="/home/liad/ClionProjects/Taxi/TaxiServer.h">
+			<Option target="Taxi"/>
+		</Unit>
 		<Unit filename="/home/liad/ClionProjects/Taxi/Test/BFSTest.cpp">
 			<Option target="Taxi"/>
 		</Unit>
