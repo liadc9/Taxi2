@@ -1,0 +1,68 @@
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: /home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ff9f5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ff9f5.dir/build.make CMakeFiles/cmTC_ff9f5.dir/build
+make[1]: Entering directory '/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ff9f5.dir/CheckIncludeFile.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_ff9f5.dir/CheckIncludeFile.c.o   -c /home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Assembler messages:
+Fatal error: can't create CMakeFiles/cmTC_ff9f5.dir/CheckIncludeFile.c.o: No such file or directory
+CMakeFiles/cmTC_ff9f5.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_ff9f5.dir/CheckIncludeFile.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_ff9f5.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ff9f5/fast' failed
+make: *** [cmTC_ff9f5/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_27de5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_27de5.dir/build.make CMakeFiles/cmTC_27de5.dir/build
+make[1]: Entering directory '/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_27de5.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_27de5.dir/CheckSymbolExists.c.o   -c /home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Assembler messages:
+Fatal error: can't create CMakeFiles/cmTC_27de5.dir/CheckSymbolExists.c.o: No such file or directory
+CMakeFiles/cmTC_27de5.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_27de5.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_27de5.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_27de5/fast' failed
+make: *** [cmTC_27de5/fast] Error 2
+
+File /home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0f6a2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0f6a2.dir/build.make CMakeFiles/cmTC_0f6a2.dir/build
+make[1]: Entering directory '/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f6a2.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0f6a2.dir/CheckFunctionExists.c.o   -c /home/liad/Documents/clion-2016.2.3/bin/cmake/share/cmake-3.6/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0f6a2
+/home/liad/Documents/clion-2016.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f6a2.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_0f6a2.dir/CheckFunctionExists.c.o  -o cmTC_0f6a2 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_0f6a2.dir/build.make:97: recipe for target 'cmTC_0f6a2' failed
+make[1]: *** [cmTC_0f6a2] Error 1
+make[1]: Leaving directory '/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_0f6a2/fast' failed
+make: *** [cmTC_0f6a2/fast] Error 2
+
+
