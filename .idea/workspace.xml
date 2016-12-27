@@ -16,17 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a73c86f-3260-47f5-add0-86912d1cdf4e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Taxi.dir/Menu.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Taxi.dir/Menu.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Taxi.dir/Test/TaxiCenterTest.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Taxi.dir/Test/TaxiCenterTest.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Taxi.dir/Test/TripTest.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Taxi.dir/Test/TripTest.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Taxi.dir/Trip.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Taxi.dir/Trip.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Taxi" afterPath="$PROJECT_DIR$/cmake-build-debug/Taxi" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Menu.cpp" afterPath="$PROJECT_DIR$/Menu.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Taxi.dir/CXX.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Taxi.dir/CXX.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Taxi.dir/depend.internal" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Taxi.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Taxi.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Taxi.dir/depend.make" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,8 +70,8 @@
       <file leaf-file-name="Menu.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Menu.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="82" column="24" lean-forward="false" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+            <state relative-caret-position="110">
+              <caret line="72" column="28" lean-forward="true" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
               <folding>
                 <element signature="e#74#94#0" expanded="true" />
               </folding>
@@ -541,7 +532,7 @@
       <workItem from="1482851380377" duration="1890000" />
       <workItem from="1482856666772" duration="568000" />
       <workItem from="1482857288652" duration="4555000" />
-      <workItem from="1482866728395" duration="2373000" />
+      <workItem from="1482866728395" duration="2655000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1482851402698</created>
@@ -557,11 +548,18 @@
       <option name="project" value="LOCAL" />
       <updated>1482851474757</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="test">
+      <created>1482869124532</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1482869124532</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78886000" />
+    <option name="totallyTimeSpent" value="79168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="52" width="1535" height="972" extended-state="0" />
@@ -986,8 +984,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Menu.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="82" column="24" lean-forward="false" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+        <state relative-caret-position="110">
+          <caret line="72" column="28" lean-forward="true" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
           <folding>
             <element signature="e#74#94#0" expanded="true" />
           </folding>
