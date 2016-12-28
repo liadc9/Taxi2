@@ -88,19 +88,6 @@ void Menu:: online(Grid* grid) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                 getline(cin, information);
                 // parse the data given
                 parsedData = parse.DataSplit(information);

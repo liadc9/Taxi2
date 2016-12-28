@@ -7,6 +7,7 @@
 
 
 class Main {
+public:
 
 };
 

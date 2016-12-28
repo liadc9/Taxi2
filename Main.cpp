@@ -13,9 +13,17 @@
 #include <gtest/gtest.h>
 #include <boost/any.hpp>
 #include "Menu.h"
+#include "Main.h"
 
 
 using namespace std;
+
+/**
+ * costrcutor for the menu
+ */
+Main:: Main(){
+
+}
 /**
  * This is the main function, it is used to control the flow of the program.
  * it calls the parser to parse arguments, calls the grid class to create a grid.
@@ -25,11 +33,11 @@ using namespace std;
  * @param argv - args received from user
  * @return null;
  */
-int main(int argc, char* argv[]) {
+int main() {
 
 
-    testing::InitGoogleTest(&argc, argv);
-    RUN_ALL_TESTS();
+ //   testing::InitGoogleTest(&argc, argv);
+  //  RUN_ALL_TESTS();
 
     // get grid input from user
     string gridInput;
