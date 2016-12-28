@@ -74,8 +74,6 @@ void Menu:: online(Grid* grid, Socket* socket) {
 
                 char buffer[1024];
 
-                socket->sendData("hello from server to client");
-
                 cin >> choice;
                 cin.ignore();
 
@@ -84,6 +82,8 @@ void Menu:: online(Grid* grid, Socket* socket) {
 
                     socket->reciveData(buffer, sizeof(buffer));
                     cout << buffer << endl;
+
+                    //disitialize object buffer************************************
 
                     //getline(cin, information);
                     // parse the data given
@@ -233,6 +233,8 @@ void Menu:: online(Grid* grid, Socket* socket) {
                 break;
             }
             case 9 : {
+
+
 
             }
             // no default requirement

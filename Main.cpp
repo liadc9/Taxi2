@@ -88,6 +88,8 @@ int main() {
     // call the menu for different input options
     Menu* menu = new Menu();
     menu->online(grid, socket);
+    //close the socket
+    socket->closeData();
 
     // frees memory before exiting the program.
     delete grid;
