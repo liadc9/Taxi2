@@ -14,6 +14,19 @@
 #include <boost/archive/text_iarchive.hpp>
 #include <fstream>
 
+#include <sstream>
+#include <boost/archive/text_oarchive.hpp>
+#include <boost/archive/text_iarchive.hpp>
+#include <boost/tokenizer.hpp>
+#include <boost/algorithm/string/predicate.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/assign/list_of.hpp>
+#include <boost/algorithm/string.hpp>
+#include <boost/iostreams/device/back_inserter.hpp>
+#include <boost/iostreams/stream.hpp>
+#include <boost/archive/binary_oarchive.hpp>
+#include <boost/archive/binary_iarchive.hpp>
+
 using namespace std;
 
 int id;
@@ -83,7 +96,8 @@ void Menu:: online(Grid* grid, Socket* socket) {
                     socket->reciveData(buffer, sizeof(buffer));
                     cout << buffer << endl;
 
-                    //disitialize object buffer************************************
+                    //disiרialize object buffer************************************
+
 
                     //getline(cin, information);
                     // parse the data given
