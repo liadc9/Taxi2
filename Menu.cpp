@@ -98,7 +98,7 @@ void Menu:: online(Grid* grid, Socket* socket) {
                     boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s2(device);
                     boost::archive::binary_iarchive ia(s2);
                     ia >> driver;
-                    //disiרialize object buffer************************************
+                    //disserialize object buffer************************************
 
 
                     //getline(cin, information);
@@ -151,6 +151,7 @@ void Menu:: online(Grid* grid, Socket* socket) {
 
                 }
                 break;
+
             }
             // creaete a trip
             case 2 : {

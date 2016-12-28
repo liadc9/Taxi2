@@ -61,9 +61,3 @@ std::ostream& operator<< (std::ostream &out, const Point &s)
     out << "(" << s.xVal <<"," << s.yVal<< ")";
     return out;
 }
-template<class Archive>
-void  Point::serialize(Archive &ar, const unsigned int version)
-{
-    ar & xVal;
-    ar & yVal;
-}

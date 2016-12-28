@@ -8,6 +8,23 @@
 
 #include "ITaxiCab.h"
 #include "Passenger.h"
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <boost/archive/text_oarchive.hpp>
+#include <boost/archive/text_iarchive.hpp>
+#include <boost/tokenizer.hpp>
+#include <boost/algorithm/string/predicate.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/assign/list_of.hpp>
+#include <boost/algorithm/string.hpp>
+#include <boost/iostreams/device/back_inserter.hpp>
+#include <boost/iostreams/stream.hpp>
+#include <boost/archive/binary_oarchive.hpp>
+#include <boost/archive/binary_iarchive.hpp>
+#include <cstring>
+#include <boost/serialization/access.hpp>
+
 class Passenger;
 enum Status{Single, Marride, Divorced, Widowed};
 
@@ -57,6 +74,21 @@ public:
     void setCustomer(Passenger *customer);
 
     Passenger* getCustomer();
+
+    friend class boost::serialization::access;
+
+    template<class Archive>
+    void  Driver::serialize(Archive &ar, const unsigned int version)
+    {
+        ar & id;
+        ar & age;
+        ar & experience;
+        ar & satisfaction;
+        ar & taxiCabInfo;
+        ar & status;
+        ar & customer;
+        ar & onTrip;
+    }
 };
 
 
