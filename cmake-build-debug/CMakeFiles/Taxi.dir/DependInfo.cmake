@@ -40,7 +40,6 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../lib/googletest-master/googletest/include"
   "../lib/googletest-master/googlemock/include"
-  "/home/liad/.linuxbrew/Cellar/boost/1.62.0/include"
   )
 
 # Targets to which this target links.

@@ -86,7 +86,6 @@
 				<Compiler>
 					<Add directory="/home/liad/ClionProjects/Taxi/lib/googletest-master/googletest/include"/>
 					<Add directory="/home/liad/ClionProjects/Taxi/lib/googletest-master/googlemock/include"/>
-					<Add directory="/home/liad/.linuxbrew/Cellar/boost/1.62.0/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -112,7 +111,6 @@
 				<Compiler>
 					<Add directory="/home/liad/ClionProjects/Taxi/lib/googletest-master/googletest/include"/>
 					<Add directory="/home/liad/ClionProjects/Taxi/lib/googletest-master/googlemock/include"/>
-					<Add directory="/home/liad/.linuxbrew/Cellar/boost/1.62.0/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>

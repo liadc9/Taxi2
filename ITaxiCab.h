@@ -86,9 +86,10 @@ public:
     void setLocation(State* location);
 
     virtual void move(State* start ,State* rideStart, Grid* grid) = 0;
-
+/*
     template<class Archive>
     void serialize(Archive &ar, const unsigned int version);
+    */
 };
 
 

@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++98
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/liad/ClionProjects/Taxi/lib/googletest-master/googletest/include -I/home/liad/ClionProjects/Taxi/lib/googletest-master/googlemock/include -I/home/liad/.linuxbrew/Cellar/boost/1.62.0/include 
+CXX_INCLUDES = -I/home/liad/ClionProjects/Taxi/lib/googletest-master/googletest/include -I/home/liad/ClionProjects/Taxi/lib/googletest-master/googlemock/include 
 

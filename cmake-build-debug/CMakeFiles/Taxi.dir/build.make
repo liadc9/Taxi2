@@ -820,6 +820,8 @@ Taxi: CMakeFiles/Taxi.dir/Socket.cpp.o
 Taxi: CMakeFiles/Taxi.dir/build.make
 Taxi: lib/googletest-master/googlemock/gtest/libgtest.a
 Taxi: lib/googletest-master/googlemock/gtest/libgtest_main.a
+Taxi: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+Taxi: /usr/lib/x86_64-linux-gnu/libboost_system.so
 Taxi: lib/googletest-master/googlemock/gtest/libgtest.a
 Taxi: CMakeFiles/Taxi.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking CXX executable Taxi"
