@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <boost/archive/text_oarchive.hpp>
