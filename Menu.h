@@ -6,11 +6,12 @@
 #define TAXI_MENU_H
 #include "Grid.h"
 #include "Driver.h"
+#include "Socket.h"
 
 class Menu {
 public:
     Menu();
-    void online(Grid* grid);
+    void online(Grid* grid,Socket* socket);
 };
 
 

@@ -10,7 +10,6 @@
 #include <boost/any.hpp>
 #include <sys/socket.h>
 #include "ITaxiCab.h"
-#include "TaxiServer.h"
 #include <boost/archive/text_oarchive.hpp>
 #include <boost/archive/text_iarchive.hpp>
 #include <fstream>
@@ -58,7 +57,7 @@ Menu:: Menu(){
  * press 7 to quit
  * @param grid - our given grid created in main.
  */
-void Menu:: online(Grid* grid) {
+void Menu:: online(Grid* grid,Socket* socket) {
 
     int choice = 0;
     TaxiCenter *taxiCenter;
@@ -73,8 +72,6 @@ void Menu:: online(Grid* grid) {
             // create driver
             case 1 : {
 
-
-                TaxiServer* socket = new TaxiServer();
 
                 cin >> choice;
                 cin.ignore();

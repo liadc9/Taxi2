@@ -14,16 +14,11 @@
 #include <boost/any.hpp>
 #include "Menu.h"
 #include "Main.h"
+#include "Udp.h"
 
 
 using namespace std;
 
-/**
- * costrcutor for the menu
- */
-Main:: Main(){
-
-}
 /**
  * This is the main function, it is used to control the flow of the program.
  * it calls the parser to parse arguments, calls the grid class to create a grid.
@@ -34,7 +29,14 @@ Main:: Main(){
  * @return null;
  */
 int main() {
+    Socket* socket = new Udp(1,1212);
+    socket->initialize();
 
+
+    char buffer[1024];
+    socket->reciveData(buffer, sizeof(buffer));
+    cout << buffer << endl;
+    socket->sendData("hello from server to client");
 
  //   testing::InitGoogleTest(&argc, argv);
   //  RUN_ALL_TESTS();
@@ -90,7 +92,7 @@ int main() {
     }
     // call the menu for different input options
     Menu* menu = new Menu();
-    menu->online(grid);
+    menu->online(grid, socket);
 
     // frees memory before exiting the program.
     delete grid;
