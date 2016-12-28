@@ -16,10 +16,10 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/liad/ClionProjects/Taxi/Parser.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Parser.cpp.o"
   "/home/liad/ClionProjects/Taxi/Passenger.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Passenger.cpp.o"
   "/home/liad/ClionProjects/Taxi/Point.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Point.cpp.o"
+  "/home/liad/ClionProjects/Taxi/Socket.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Socket.cpp.o"
   "/home/liad/ClionProjects/Taxi/StandardCab.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/StandardCab.cpp.o"
   "/home/liad/ClionProjects/Taxi/State.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/State.cpp.o"
   "/home/liad/ClionProjects/Taxi/TaxiCenter.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/TaxiCenter.cpp.o"
-  "/home/liad/ClionProjects/Taxi/TaxiServer.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/TaxiServer.cpp.o"
   "/home/liad/ClionProjects/Taxi/Test/BFSTest.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Test/BFSTest.cpp.o"
   "/home/liad/ClionProjects/Taxi/Test/DriverTest.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Test/DriverTest.cpp.o"
   "/home/liad/ClionProjects/Taxi/Test/GridTest.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Test/GridTest.cpp.o"
@@ -31,6 +31,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/liad/ClionProjects/Taxi/Test/TaxiCenterTest.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Test/TaxiCenterTest.cpp.o"
   "/home/liad/ClionProjects/Taxi/Test/TripTest.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Test/TripTest.cpp.o"
   "/home/liad/ClionProjects/Taxi/Trip.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Trip.cpp.o"
+  "/home/liad/ClionProjects/Taxi/Udp.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Udp.cpp.o"
   "/home/liad/ClionProjects/Taxi/Waze.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Waze.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
@@ -39,7 +40,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../lib/googletest-master/googletest/include"
   "../lib/googletest-master/googlemock/include"
-  "/home/gal/.linuxbrew/Cellar/boost/1.62.0/include"
+  "/home/liad/.linuxbrew/Cellar/boost/1.62.0/include"
   )
 
 # Targets to which this target links.

@@ -86,7 +86,7 @@
 				<Compiler>
 					<Add directory="/home/liad/ClionProjects/Taxi/lib/googletest-master/googletest/include"/>
 					<Add directory="/home/liad/ClionProjects/Taxi/lib/googletest-master/googlemock/include"/>
-					<Add directory="/home/gal/.linuxbrew/Cellar/boost/1.62.0/include"/>
+					<Add directory="/home/liad/.linuxbrew/Cellar/boost/1.62.0/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -112,7 +112,7 @@
 				<Compiler>
 					<Add directory="/home/liad/ClionProjects/Taxi/lib/googletest-master/googletest/include"/>
 					<Add directory="/home/liad/ClionProjects/Taxi/lib/googletest-master/googlemock/include"/>
-					<Add directory="/home/gal/.linuxbrew/Cellar/boost/1.62.0/include"/>
+					<Add directory="/home/liad/.linuxbrew/Cellar/boost/1.62.0/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -410,6 +410,12 @@
 		<Unit filename="/home/liad/ClionProjects/Taxi/Point.h">
 			<Option target="Taxi"/>
 		</Unit>
+		<Unit filename="/home/liad/ClionProjects/Taxi/Socket.cpp">
+			<Option target="Taxi"/>
+		</Unit>
+		<Unit filename="/home/liad/ClionProjects/Taxi/Socket.h">
+			<Option target="Taxi"/>
+		</Unit>
 		<Unit filename="/home/liad/ClionProjects/Taxi/StandardCab.cpp">
 			<Option target="Taxi"/>
 		</Unit>
@@ -426,12 +432,6 @@
 			<Option target="Taxi"/>
 		</Unit>
 		<Unit filename="/home/liad/ClionProjects/Taxi/TaxiCenter.h">
-			<Option target="Taxi"/>
-		</Unit>
-		<Unit filename="/home/liad/ClionProjects/Taxi/TaxiServer.cpp">
-			<Option target="Taxi"/>
-		</Unit>
-		<Unit filename="/home/liad/ClionProjects/Taxi/TaxiServer.h">
 			<Option target="Taxi"/>
 		</Unit>
 		<Unit filename="/home/liad/ClionProjects/Taxi/Test/BFSTest.cpp">
@@ -468,6 +468,12 @@
 			<Option target="Taxi"/>
 		</Unit>
 		<Unit filename="/home/liad/ClionProjects/Taxi/Trip.h">
+			<Option target="Taxi"/>
+		</Unit>
+		<Unit filename="/home/liad/ClionProjects/Taxi/Udp.cpp">
+			<Option target="Taxi"/>
+		</Unit>
+		<Unit filename="/home/liad/ClionProjects/Taxi/Udp.h">
 			<Option target="Taxi"/>
 		</Unit>
 		<Unit filename="/home/liad/ClionProjects/Taxi/Waze.cpp">

@@ -33,11 +33,6 @@ int main() {
     socket->initialize();
 
 
-    char buffer[1024];
-    socket->reciveData(buffer, sizeof(buffer));
-    cout << buffer << endl;
-    socket->sendData("hello from server to client");
-
  //   testing::InitGoogleTest(&argc, argv);
   //  RUN_ALL_TESTS();
 

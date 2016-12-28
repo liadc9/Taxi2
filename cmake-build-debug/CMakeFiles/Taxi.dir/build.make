@@ -705,28 +705,52 @@ CMakeFiles/Taxi.dir/Menu.cpp.o.provides: CMakeFiles/Taxi.dir/Menu.cpp.o.requires
 CMakeFiles/Taxi.dir/Menu.cpp.o.provides.build: CMakeFiles/Taxi.dir/Menu.cpp.o
 
 
-CMakeFiles/Taxi.dir/TaxiServer.cpp.o: CMakeFiles/Taxi.dir/flags.make
-CMakeFiles/Taxi.dir/TaxiServer.cpp.o: ../TaxiServer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/Taxi.dir/TaxiServer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Taxi.dir/TaxiServer.cpp.o -c /home/liad/ClionProjects/Taxi/TaxiServer.cpp
+CMakeFiles/Taxi.dir/Udp.cpp.o: CMakeFiles/Taxi.dir/flags.make
+CMakeFiles/Taxi.dir/Udp.cpp.o: ../Udp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/Taxi.dir/Udp.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Taxi.dir/Udp.cpp.o -c /home/liad/ClionProjects/Taxi/Udp.cpp
 
-CMakeFiles/Taxi.dir/TaxiServer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Taxi.dir/TaxiServer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/liad/ClionProjects/Taxi/TaxiServer.cpp > CMakeFiles/Taxi.dir/TaxiServer.cpp.i
+CMakeFiles/Taxi.dir/Udp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Taxi.dir/Udp.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/liad/ClionProjects/Taxi/Udp.cpp > CMakeFiles/Taxi.dir/Udp.cpp.i
 
-CMakeFiles/Taxi.dir/TaxiServer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Taxi.dir/TaxiServer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/liad/ClionProjects/Taxi/TaxiServer.cpp -o CMakeFiles/Taxi.dir/TaxiServer.cpp.s
+CMakeFiles/Taxi.dir/Udp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Taxi.dir/Udp.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/liad/ClionProjects/Taxi/Udp.cpp -o CMakeFiles/Taxi.dir/Udp.cpp.s
 
-CMakeFiles/Taxi.dir/TaxiServer.cpp.o.requires:
+CMakeFiles/Taxi.dir/Udp.cpp.o.requires:
 
-.PHONY : CMakeFiles/Taxi.dir/TaxiServer.cpp.o.requires
+.PHONY : CMakeFiles/Taxi.dir/Udp.cpp.o.requires
 
-CMakeFiles/Taxi.dir/TaxiServer.cpp.o.provides: CMakeFiles/Taxi.dir/TaxiServer.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/TaxiServer.cpp.o.provides.build
-.PHONY : CMakeFiles/Taxi.dir/TaxiServer.cpp.o.provides
+CMakeFiles/Taxi.dir/Udp.cpp.o.provides: CMakeFiles/Taxi.dir/Udp.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/Udp.cpp.o.provides.build
+.PHONY : CMakeFiles/Taxi.dir/Udp.cpp.o.provides
 
-CMakeFiles/Taxi.dir/TaxiServer.cpp.o.provides.build: CMakeFiles/Taxi.dir/TaxiServer.cpp.o
+CMakeFiles/Taxi.dir/Udp.cpp.o.provides.build: CMakeFiles/Taxi.dir/Udp.cpp.o
+
+
+CMakeFiles/Taxi.dir/Socket.cpp.o: CMakeFiles/Taxi.dir/flags.make
+CMakeFiles/Taxi.dir/Socket.cpp.o: ../Socket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/Taxi.dir/Socket.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Taxi.dir/Socket.cpp.o -c /home/liad/ClionProjects/Taxi/Socket.cpp
+
+CMakeFiles/Taxi.dir/Socket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Taxi.dir/Socket.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/liad/ClionProjects/Taxi/Socket.cpp > CMakeFiles/Taxi.dir/Socket.cpp.i
+
+CMakeFiles/Taxi.dir/Socket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Taxi.dir/Socket.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/liad/ClionProjects/Taxi/Socket.cpp -o CMakeFiles/Taxi.dir/Socket.cpp.s
+
+CMakeFiles/Taxi.dir/Socket.cpp.o.requires:
+
+.PHONY : CMakeFiles/Taxi.dir/Socket.cpp.o.requires
+
+CMakeFiles/Taxi.dir/Socket.cpp.o.provides: CMakeFiles/Taxi.dir/Socket.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/Socket.cpp.o.provides.build
+.PHONY : CMakeFiles/Taxi.dir/Socket.cpp.o.provides
+
+CMakeFiles/Taxi.dir/Socket.cpp.o.provides.build: CMakeFiles/Taxi.dir/Socket.cpp.o
 
 
 # Object files for target Taxi
@@ -758,7 +782,8 @@ Taxi_OBJECTS = \
 "CMakeFiles/Taxi.dir/Test/PassengerTest.cpp.o" \
 "CMakeFiles/Taxi.dir/Test/DriverTest.cpp.o" \
 "CMakeFiles/Taxi.dir/Menu.cpp.o" \
-"CMakeFiles/Taxi.dir/TaxiServer.cpp.o"
+"CMakeFiles/Taxi.dir/Udp.cpp.o" \
+"CMakeFiles/Taxi.dir/Socket.cpp.o"
 
 # External object files for target Taxi
 Taxi_EXTERNAL_OBJECTS =
@@ -790,13 +815,14 @@ Taxi: CMakeFiles/Taxi.dir/Test/BFSTest.cpp.o
 Taxi: CMakeFiles/Taxi.dir/Test/PassengerTest.cpp.o
 Taxi: CMakeFiles/Taxi.dir/Test/DriverTest.cpp.o
 Taxi: CMakeFiles/Taxi.dir/Menu.cpp.o
-Taxi: CMakeFiles/Taxi.dir/TaxiServer.cpp.o
+Taxi: CMakeFiles/Taxi.dir/Udp.cpp.o
+Taxi: CMakeFiles/Taxi.dir/Socket.cpp.o
 Taxi: CMakeFiles/Taxi.dir/build.make
 Taxi: lib/googletest-master/googlemock/gtest/libgtest.a
 Taxi: lib/googletest-master/googlemock/gtest/libgtest_main.a
 Taxi: lib/googletest-master/googlemock/gtest/libgtest.a
 Taxi: CMakeFiles/Taxi.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX executable Taxi"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking CXX executable Taxi"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Taxi.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -831,7 +857,8 @@ CMakeFiles/Taxi.dir/requires: CMakeFiles/Taxi.dir/Test/BFSTest.cpp.o.requires
 CMakeFiles/Taxi.dir/requires: CMakeFiles/Taxi.dir/Test/PassengerTest.cpp.o.requires
 CMakeFiles/Taxi.dir/requires: CMakeFiles/Taxi.dir/Test/DriverTest.cpp.o.requires
 CMakeFiles/Taxi.dir/requires: CMakeFiles/Taxi.dir/Menu.cpp.o.requires
-CMakeFiles/Taxi.dir/requires: CMakeFiles/Taxi.dir/TaxiServer.cpp.o.requires
+CMakeFiles/Taxi.dir/requires: CMakeFiles/Taxi.dir/Udp.cpp.o.requires
+CMakeFiles/Taxi.dir/requires: CMakeFiles/Taxi.dir/Socket.cpp.o.requires
 
 .PHONY : CMakeFiles/Taxi.dir/requires
 

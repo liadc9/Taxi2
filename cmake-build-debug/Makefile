@@ -543,6 +543,33 @@ Point.cpp.s:
 	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/Point.cpp.s
 .PHONY : Point.cpp.s
 
+Socket.o: Socket.cpp.o
+
+.PHONY : Socket.o
+
+# target to build an object file
+Socket.cpp.o:
+	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/Socket.cpp.o
+.PHONY : Socket.cpp.o
+
+Socket.i: Socket.cpp.i
+
+.PHONY : Socket.i
+
+# target to preprocess a source file
+Socket.cpp.i:
+	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/Socket.cpp.i
+.PHONY : Socket.cpp.i
+
+Socket.s: Socket.cpp.s
+
+.PHONY : Socket.s
+
+# target to generate assembly for a file
+Socket.cpp.s:
+	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/Socket.cpp.s
+.PHONY : Socket.cpp.s
+
 StandardCab.o: StandardCab.cpp.o
 
 .PHONY : StandardCab.o
@@ -623,33 +650,6 @@ TaxiCenter.s: TaxiCenter.cpp.s
 TaxiCenter.cpp.s:
 	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/TaxiCenter.cpp.s
 .PHONY : TaxiCenter.cpp.s
-
-TaxiServer.o: TaxiServer.cpp.o
-
-.PHONY : TaxiServer.o
-
-# target to build an object file
-TaxiServer.cpp.o:
-	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/TaxiServer.cpp.o
-.PHONY : TaxiServer.cpp.o
-
-TaxiServer.i: TaxiServer.cpp.i
-
-.PHONY : TaxiServer.i
-
-# target to preprocess a source file
-TaxiServer.cpp.i:
-	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/TaxiServer.cpp.i
-.PHONY : TaxiServer.cpp.i
-
-TaxiServer.s: TaxiServer.cpp.s
-
-.PHONY : TaxiServer.s
-
-# target to generate assembly for a file
-TaxiServer.cpp.s:
-	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/TaxiServer.cpp.s
-.PHONY : TaxiServer.cpp.s
 
 Test/BFSTest.o: Test/BFSTest.cpp.o
 
@@ -948,6 +948,33 @@ Trip.cpp.s:
 	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/Trip.cpp.s
 .PHONY : Trip.cpp.s
 
+Udp.o: Udp.cpp.o
+
+.PHONY : Udp.o
+
+# target to build an object file
+Udp.cpp.o:
+	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/Udp.cpp.o
+.PHONY : Udp.cpp.o
+
+Udp.i: Udp.cpp.i
+
+.PHONY : Udp.i
+
+# target to preprocess a source file
+Udp.cpp.i:
+	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/Udp.cpp.i
+.PHONY : Udp.cpp.i
+
+Udp.s: Udp.cpp.s
+
+.PHONY : Udp.s
+
+# target to generate assembly for a file
+Udp.cpp.s:
+	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/Udp.cpp.s
+.PHONY : Udp.cpp.s
+
 Waze.o: Waze.cpp.o
 
 .PHONY : Waze.o
@@ -1028,6 +1055,9 @@ help:
 	@echo "... Point.o"
 	@echo "... Point.i"
 	@echo "... Point.s"
+	@echo "... Socket.o"
+	@echo "... Socket.i"
+	@echo "... Socket.s"
 	@echo "... StandardCab.o"
 	@echo "... StandardCab.i"
 	@echo "... StandardCab.s"
@@ -1037,9 +1067,6 @@ help:
 	@echo "... TaxiCenter.o"
 	@echo "... TaxiCenter.i"
 	@echo "... TaxiCenter.s"
-	@echo "... TaxiServer.o"
-	@echo "... TaxiServer.i"
-	@echo "... TaxiServer.s"
 	@echo "... Test/BFSTest.o"
 	@echo "... Test/BFSTest.i"
 	@echo "... Test/BFSTest.s"
@@ -1073,6 +1100,9 @@ help:
 	@echo "... Trip.o"
 	@echo "... Trip.i"
 	@echo "... Trip.s"
+	@echo "... Udp.o"
+	@echo "... Udp.i"
+	@echo "... Udp.s"
 	@echo "... Waze.o"
 	@echo "... Waze.i"
 	@echo "... Waze.s"

@@ -57,7 +57,7 @@ Menu:: Menu(){
  * press 7 to quit
  * @param grid - our given grid created in main.
  */
-void Menu:: online(Grid* grid,Socket* socket) {
+void Menu:: online(Grid* grid, Socket* socket) {
 
     int choice = 0;
     TaxiCenter *taxiCenter;
@@ -72,62 +72,67 @@ void Menu:: online(Grid* grid,Socket* socket) {
             // create driver
             case 1 : {
 
+                char buffer[1024];
+
+                socket->sendData("hello from server to client");
 
                 cin >> choice;
                 cin.ignore();
-                for(int i = 0; i < choice; i++){
 
 
+                for(int i = 0; i < choice; i++) {
 
+                    socket->reciveData(buffer, sizeof(buffer));
+                    cout << buffer << endl;
 
-                }
+                    //getline(cin, information);
+                    // parse the data given
+                    parsedData = parse.DataSplit(buffer);
+                    Status stat;
 
+                    // properly reeive all data from parser
+                    id = boost::any_cast<int>(parsedData[0]);
+                    age = boost::any_cast<int>(parsedData[1]);
+                    status = boost::any_cast<char>(parsedData[2]);
 
-
-
-                getline(cin, information);
-                // parse the data given
-                parsedData = parse.DataSplit(information);
-                Status stat;
-
-                // properly reeive all data from parser
-                id = boost::any_cast<int>(parsedData[0]);
-                age = boost::any_cast<int>(parsedData[1]);
-                status = boost::any_cast<char>(parsedData[2]);
-
-                if (status == 'S') {
-                    stat = Single;
-                } else if (status == 'M') {
-                    stat = Marride;
-                } else if (status == 'D') {
-                    stat = Divorced;
-                } else if (status == 'W') {
-                    stat = Widowed;
-                }
-
-                expirience = boost::any_cast<int>(parsedData[3]);
-                vehicle = boost::any_cast<int>(parsedData[4]);
-                double satisfaction = 0;
-
-                //assign the driver the correct taxi according to vehicle id
-                for (int i = 0; i < taxiCenter->getTaxis().size(); i++) {
-                    if (taxiCenter->getTaxis().at(i)->getCab_ID() == vehicle) {
-                        Driver *driver = new Driver(id, age, expirience, satisfaction,
-                                                    taxiCenter->getTaxis().at(i), stat, NULL, false);
-                        // now the cab has a driver
-                        taxiCenter->getTaxis().at(i)->setHasDriver(true);
-                        taxiCenter->AddDriver(driver);
+                    if (status == 'S') {
+                        stat = Single;
+                    } else if (status == 'M') {
+                        stat = Marride;
+                    } else if (status == 'D') {
+                        stat = Divorced;
+                    } else if (status == 'W') {
+                        stat = Widowed;
                     }
-                }
-                //assign the driver the correct taxi according to vehicle id
-                for (int i = 0; i < taxiCenter->getLuxTaxis().size(); i++) {
-                    if (taxiCenter->getLuxTaxis().at(i)->getCab_ID() == vehicle) {
-                        Driver *driver = new Driver(id, age, expirience, satisfaction,
-                                                    taxiCenter->getTaxis().at(i), stat, NULL, false);
-                        // now the cab has a driver
-                        taxiCenter->getLuxTaxis().at(i)->setHasDriver(true);
-                        taxiCenter->AddDriver(driver);
+
+                    expirience = boost::any_cast<int>(parsedData[3]);
+                    vehicle = boost::any_cast<int>(parsedData[4]);
+                    double satisfaction = 0;
+
+                    //assign the driver the correct taxi according to vehicle id
+                    for (int i = 0; i < taxiCenter->getTaxis().size(); i++) {
+                        if (taxiCenter->getTaxis().at(i)->getCab_ID() == vehicle) {
+                            Driver *driver = new Driver(id, age, expirience, satisfaction,
+                                                        taxiCenter->getTaxis().at(i), stat, NULL, false);
+                            // now the cab has a driver
+                            taxiCenter->getTaxis().at(i)->setHasDriver(true);
+                            taxiCenter->AddDriver(driver);
+                        }
                     }
+                    //assign the driver the correct taxi according to vehicle id
+                    for (int i = 0; i < taxiCenter->getLuxTaxis().size(); i++) {
+                        if (taxiCenter->getLuxTaxis().at(i)->getCab_ID() == vehicle) {
+                            Driver *driver = new Driver(id, age, expirience, satisfaction,
+                                                        taxiCenter->getTaxis().at(i), stat, NULL, false);
+                            // now the cab has a driver
+                            taxiCenter->getLuxTaxis().at(i)->setHasDriver(true);
+                            taxiCenter->AddDriver(driver);
+                            int idCab = driver->getTaxiCabInfo()->getCab_ID();
+                            // serealization goes here
+                            //To Do: /socket->sendData(driver)
+                        }
+                    }
+
                 }
                 break;
             }
@@ -226,6 +231,9 @@ void Menu:: online(Grid* grid,Socket* socket) {
                     taxiCenter->tripCreator(trip);
                 }
                 break;
+            }
+            case 9 : {
+
             }
             // no default requirement
         }
