@@ -19,6 +19,7 @@
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/archive/binary_iarchive.hpp>
 #include <cstring>
+#include <boost/serialization/access.hpp>
 #include "State.h"
 #include "Grid.h"
 
@@ -39,6 +40,13 @@ protected:
     State* location;
     bool hasDriver;
 
+    friend class boost::serialization::access;
+
+    template<class Archive>
+    void serialize(Archive &ar, const unsigned int version)
+    {
+        ar & Cab_ID;
+    }
 public:
     ITaxiCab(int Cab_ID, int distance_made, Color color, Model model, int coeficient,
               int speed, State* location, bool hasDriver);

@@ -1,19 +1,8 @@
 /**
  * The following class is used to hold all posssible menu options
  */
-# include <iostream>
-#include "Menu.h"
-#include "Parser.h"
-#include "Driver.h"
-#include "State.h"
-#include "Grid.h"
-#include <boost/any.hpp>
-#include <sys/socket.h>
-#include "ITaxiCab.h"
-#include <boost/archive/text_oarchive.hpp>
-#include <boost/archive/text_iarchive.hpp>
+#include <iostream>
 #include <fstream>
-
 #include <sstream>
 #include <boost/archive/text_oarchive.hpp>
 #include <boost/archive/text_iarchive.hpp>
@@ -26,6 +15,15 @@
 #include <boost/iostreams/stream.hpp>
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/archive/binary_iarchive.hpp>
+#include "Menu.h"
+#include "Parser.h"
+#include "Driver.h"
+#include "State.h"
+#include "Grid.h"
+#include <boost/any.hpp>
+#include <sys/socket.h>
+#include "ITaxiCab.h"
+
 
 using namespace std;
 
@@ -92,10 +90,14 @@ void Menu:: online(Grid* grid, Socket* socket) {
 
 
                 for(int i = 0; i < choice; i++) {
-
+                    Driver *driver;
                     socket->reciveData(buffer, sizeof(buffer));
                     cout << buffer << endl;
-
+                    string serial_str;
+                    boost::iostreams::basic_array_source<char> device(serial_str.c_str(), serial_str.size());
+                    boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s2(device);
+                    boost::archive::binary_iarchive ia(s2);
+                    ia >> driver;
                     //disiרialize object buffer************************************
 
 
@@ -142,7 +144,7 @@ void Menu:: online(Grid* grid, Socket* socket) {
                             taxiCenter->getLuxTaxis().at(i)->setHasDriver(true);
                             taxiCenter->AddDriver(driver);
                             int idCab = driver->getTaxiCabInfo()->getCab_ID();
-                            // serealization goes here
+                            // serealization goes here  ******
                             //To Do: /socket->sendData(driver)
                         }
                     }
