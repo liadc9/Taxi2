@@ -141,17 +141,4 @@ bool ITaxiCab::isHasDriver(){
 void ITaxiCab::setHasDriver(bool hasDriver) {
     ITaxiCab::hasDriver = hasDriver;
 }
-/*
-template<class Archive>
-void  ITaxiCab::serialize(Archive &ar, const unsigned int version)
-{
-    ar & Cab_ID;
-    ar & distance_made;
-    ar & color;
-    ar & model;
-    ar & coeficient;
-    ar & speed;
-    ar & location;
-    ar & hasDriver;
-}
-*/
+

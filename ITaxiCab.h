@@ -86,11 +86,20 @@ public:
     void setLocation(State* location);
 
     virtual void move(State* start ,State* rideStart, Grid* grid) = 0;
-/*
+
     friend class boost::serialization::access;
     template<class Archive>
-    void serialize(Archive &ar, const unsigned int version);
-    */
+    void  ITaxiCab::serialize(Archive &ar, const unsigned int version)
+    {
+        ar & Cab_ID;
+        ar & distance_made;
+        ar & color;
+        ar & model;
+        ar & coeficient;
+        ar & speed;
+        ar & location;
+        ar & hasDriver;
+    }
 };
 
 
