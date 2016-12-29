@@ -8,6 +8,7 @@
 
 class Grid: public Map{
 public:
+    Grid();
     Grid(int width, int height);
     int getHeight();
     int getWidth();

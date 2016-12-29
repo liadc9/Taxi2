@@ -50,7 +50,6 @@ public:
         ar & state;
         ar & comeFrom;
         ar & wasHere;
-
     }
 private:
     int isObstacle;

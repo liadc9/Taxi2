@@ -40,14 +40,8 @@ protected:
     State* location;
     bool hasDriver;
 
-    friend class boost::serialization::access;
-
-    template<class Archive>
-    void serialize(Archive &ar, const unsigned int version)
-    {
-        ar & Cab_ID;
-    }
 public:
+    ITaxiCab();
     ITaxiCab(int Cab_ID, int distance_made, Color color, Model model, int coeficient,
               int speed, State* location, bool hasDriver);
     ~ITaxiCab(){}
@@ -87,7 +81,7 @@ public:
 
     virtual void move(State* start ,State* rideStart, Grid* grid) = 0;
 
-   /* friend class boost::serialization::access;
+    friend class boost::serialization::access;
     template<class Archive>
     void  serialize(Archive &ar, const unsigned int version)
     {
@@ -99,7 +93,7 @@ public:
         ar & speed;
         ar & location;
         ar & hasDriver;
-    }*/
+    }
 };
 
 

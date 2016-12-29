@@ -141,4 +141,4 @@ bool ITaxiCab::isHasDriver(){
 void ITaxiCab::setHasDriver(bool hasDriver) {
     ITaxiCab::hasDriver = hasDriver;
 }
-
+ITaxiCab::ITaxiCab(){};

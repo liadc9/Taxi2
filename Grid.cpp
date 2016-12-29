@@ -38,6 +38,7 @@ Grid::Grid(int width, int height){
     }
     this->myGrid = myGrid;
 }
+Grid::Grid(){};
 /**
  * getter for the size of the grid
  * @return vector with info
