@@ -32,7 +32,7 @@ public:
 
     void answerCall(Passenger *customer);
 
-    void tripCreator(Trip* trip);
+    Driver* tripCreator(Trip* trip);
 
     void AddTaxiCab(StandardCab* taxiCab);
 

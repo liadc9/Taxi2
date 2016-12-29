@@ -17,7 +17,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4a73c86f-3260-47f5-add0-86912d1cdf4e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LuxuryCab.cpp" afterPath="$PROJECT_DIR$/LuxuryCab.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Menu.cpp" afterPath="$PROJECT_DIR$/Menu.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StandardCab.cpp" afterPath="$PROJECT_DIR$/StandardCab.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TaxiCenter.cpp" afterPath="$PROJECT_DIR$/TaxiCenter.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TaxiCenter.h" afterPath="$PROJECT_DIR$/TaxiCenter.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,6 +40,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TaxiCenter.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TaxiCenter.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="70" column="3" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaxiCenter.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TaxiCenter.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Driver.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Driver.h">
           <provider selected="true" editor-type-id="text-editor">
@@ -49,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Client.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1602">
-              <caret line="137" column="9" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
+            <state relative-caret-position="216">
+              <caret line="108" column="16" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -62,21 +86,29 @@
       <file leaf-file-name="Trip.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Trip.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
+            <state relative-caret-position="270">
               <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Trip.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Trip.h">
+      <file leaf-file-name="LuxuryCab.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LuxuryCab.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1206">
-              <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-              <folding>
-                <element signature="e#1128#1143#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="360">
+              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StandardCab.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/StandardCab.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,8 +126,8 @@
       <file leaf-file-name="Menu.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Menu.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="138" column="37" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="37" />
+            <state relative-caret-position="342">
+              <caret line="263" column="13" selection-start-line="263" selection-start-column="13" selection-end-line="263" selection-end-column="13" />
               <folding>
                 <element signature="e#74#93#0" expanded="true" />
               </folding>
@@ -135,9 +167,7 @@
       <list>
         <option value="$PROJECT_DIR$/Parser.h" />
         <option value="$PROJECT_DIR$/Test/ParserTest.cpp" />
-        <option value="$PROJECT_DIR$/StandardCab.cpp" />
         <option value="$PROJECT_DIR$/Waze.cpp" />
-        <option value="$PROJECT_DIR$/TaxiCenter.h" />
         <option value="$PROJECT_DIR$/LuxuryCab.h" />
         <option value="$PROJECT_DIR$/StandardCab.h" />
         <option value="$PROJECT_DIR$/Parser.cpp" />
@@ -148,7 +178,6 @@
         <option value="$PROJECT_DIR$/Test/StateTest.cpp" />
         <option value="$PROJECT_DIR$/Test/StandardCabTest.cpp" />
         <option value="$PROJECT_DIR$/Test/LuxuryCabTest.cpp" />
-        <option value="$PROJECT_DIR$/TaxiCenter.cpp" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Main.h" />
         <option value="$PROJECT_DIR$/TaxiServer.cpp" />
@@ -177,6 +206,10 @@
         <option value="$PROJECT_DIR$/Grid.h" />
         <option value="$PROJECT_DIR$/Client.cpp" />
         <option value="$PROJECT_DIR$/Menu.cpp" />
+        <option value="$PROJECT_DIR$/TaxiCenter.cpp" />
+        <option value="$PROJECT_DIR$/TaxiCenter.h" />
+        <option value="$PROJECT_DIR$/LuxuryCab.cpp" />
+        <option value="$PROJECT_DIR$/StandardCab.cpp" />
       </list>
     </option>
   </component>
@@ -490,7 +523,7 @@
       <workItem from="1483020657832" duration="2832000" />
       <workItem from="1483024939929" duration="6827000" />
       <workItem from="1483031828819" duration="1423000" />
-      <workItem from="1483033459523" duration="1960000" />
+      <workItem from="1483033459523" duration="3925000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1482851402698</created>
@@ -590,17 +623,24 @@
       <option name="project" value="LOCAL" />
       <updated>1483034242700</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="order and taxi">
+      <created>1483035491883</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1483035491883</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113629000" />
+    <option name="totallyTimeSpent" value="115594000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19092332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19092332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -665,7 +705,8 @@
     <MESSAGE value="serealization in ItaxiCab" />
     <MESSAGE value="grid serialize working not sure if fine" />
     <MESSAGE value="client flow" />
-    <option name="LAST_COMMIT_MESSAGE" value="client flow" />
+    <MESSAGE value="order and taxi" />
+    <option name="LAST_COMMIT_MESSAGE" value="order and taxi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -679,13 +720,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Test/BFSTest.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test/TripTest.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -805,13 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TaxiCenter.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-639">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -834,13 +861,6 @@
           <folding>
             <element signature="e#616#631#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LuxuryCab.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -872,13 +892,6 @@
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TaxiCenter.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="92" column="36" selection-start-line="92" selection-start-column="36" selection-end-line="92" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -961,14 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ITaxiCab.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2556">
-          <caret line="142" column="1" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ITaxiCab.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
@@ -995,14 +1000,6 @@
           <folding>
             <element signature="e#95#113#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Trip.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1048,18 +1045,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Menu.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="138" column="37" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="37" />
+        <state relative-caret-position="342">
+          <caret line="263" column="13" selection-start-line="263" selection-start-column="13" selection-end-line="263" selection-end-column="13" />
           <folding>
             <element signature="e#74#93#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ITaxiCab.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="142" column="1" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Trip.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1602">
-          <caret line="137" column="9" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
+        <state relative-caret-position="216">
+          <caret line="108" column="16" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LuxuryCab.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StandardCab.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxiCenter.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="70" column="3" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxiCenter.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>

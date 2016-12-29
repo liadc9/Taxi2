@@ -19,9 +19,9 @@ void LuxuryCab::move(State* start,State* rideStart, Grid* grid) {
     BFS* bfs = new BFS(trip);
     // check size of vector of BFS route
     unsigned int sizeOfSteps = bfs->AlgoRun().size();
-    // get value of final position
-    int x = bfs->getBFSreturn().at(sizeOfSteps-1).getX();
-    int y = bfs->getBFSreturn().at(sizeOfSteps-1).getY();
+    // get value of next position
+    int x = bfs->getBFSreturn().at(2).getX();
+    int y = bfs->getBFSreturn().at(2).getY();
     // change the position stored in the cab.
     State* cabNewState = grid->getState(x,y);
     setLocation(cabNewState);

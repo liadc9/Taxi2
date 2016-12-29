@@ -19,8 +19,8 @@ void StandardCab::move(State* start,State* rideStart, Grid* grid) {
     // check size of vector of BFS route
     unsigned int sizeOfSteps = bfs->AlgoRun().size();
     // get value of final position
-    int x = bfs->getBFSreturn().at(sizeOfSteps-1).getX();
-    int y = bfs->getBFSreturn().at(sizeOfSteps-1).getY();
+    int x = bfs->getBFSreturn().at(1).getX();
+    int y = bfs->getBFSreturn().at(1).getY();
     // change the position stored in the cab.
     State* cabNewState = grid->getState(x,y);
     setLocation(cabNewState);

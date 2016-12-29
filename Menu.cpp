@@ -74,6 +74,7 @@ void Menu:: online(Grid* grid, Socket* socket) {
     int choice = 0;
     TaxiCenter *taxiCenter;
     taxiCenter = new TaxiCenter();
+    int timer = 0;
     // while program doesn't terminate
     while(choice != 7) {
         // get user input for choice
@@ -83,6 +84,7 @@ void Menu:: online(Grid* grid, Socket* socket) {
         switch (choice) {
             // create driver
             case 1 : {
+
                 //create buffer
                 char buffer[1024];
                 // get nummber of drivers to input for server side
@@ -271,7 +273,7 @@ void Menu:: online(Grid* grid, Socket* socket) {
             }
             case 9 : {
 
-
+                timer++;
 
             }
             // no default requirement

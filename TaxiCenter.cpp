@@ -80,7 +80,7 @@ void TaxiCenter::AddDriver(Driver* driver) {
  * then it moves the closest cab to pick up a customer and take it to destination.
  * @param trip
  */
-void TaxiCenter::tripCreator(Trip* trip) {
+Driver* TaxiCenter::tripCreator(Trip* trip) {
     Waze* waze = new Waze();
     Driver* driver;
     State* start = trip->getStart();
@@ -93,9 +93,8 @@ void TaxiCenter::tripCreator(Trip* trip) {
             (driverState->getState().getY() != start->getState().getY())){
         driver->getTaxiCabInfo()->move(driverState,start,grid);
     }
-    // move cab to end point
-    driver->getTaxiCabInfo()->move(start,end,grid);
     delete waze;
+    return driver;
 }
 /**
  * answer customer call - not implemented yt
@@ -131,3 +130,29 @@ State* TaxiCenter::LuxCabLocation(LuxuryCab* cab){
     return NULL;
 }
 
+
+
+
+
+/** old tripCreator function
+ * this method is used to find the closest driver and assign it to a customer using waze class
+ * then it moves the closest cab to pick up a customer and take it to destination.
+ * @param trip
+ *
+void TaxiCenter::tripCreator(Trip* trip) {
+    Waze* waze = new Waze();
+    Driver* driver;
+    State* start = trip->getStart();
+    State* end = trip->getdest();
+    Grid* grid = trip->getGrid();
+    // finds closest driver to customer
+    driver = waze->findClosest(drivers,start,grid);
+    State* driverState = driver->getTaxiCabInfo()->getLocation();
+    if((driverState->getState().getX() != start->getState().getX()) &&
+       (driverState->getState().getY() != start->getState().getY())){
+        driver->getTaxiCabInfo()->move(driverState,start,grid);
+    }
+    // move cab to end point
+    driver->getTaxiCabInfo()->move(start,end,grid);
+    delete waze;
+}*/
