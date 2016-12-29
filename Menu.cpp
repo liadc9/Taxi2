@@ -160,6 +160,7 @@ void Menu:: online(Grid* grid, Socket* socket) {
                              */
                         }
                     }
+
                     for (int i = 0; i < taxiCenter->getTrips().size(); i++) {
 
 
