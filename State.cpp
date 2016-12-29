@@ -97,11 +97,3 @@ void State:: setWasHere(bool alreadyBeen){
 void State::setIsObstacle(int obstacle){
     isObstacle = obstacle;
 }
-template<class Archive>
-void  State::serialize(Archive &ar, const unsigned int version)
-{
-    ar & state;
-    ar & isObstacle;
-    ar & comeFrom;
-    ar & wasHere;
-}
