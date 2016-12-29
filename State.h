@@ -42,8 +42,16 @@ public:
     void setWasHere(bool s);
 
     void setIsObstacle(int x);
+    friend class boost::serialization::access;
+    template<class Archive>
+    void serialize(Archive &ar, const unsigned int version)
+    {
+        ar & isObstacle;
+        ar & state;
+        ar & comeFrom;
+        ar & wasHere;
 
-
+    }
 private:
     int isObstacle;
     Point state ;

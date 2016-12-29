@@ -29,7 +29,16 @@ public:
     void CatchRide(TaxiCenter* taxiCenter);
 
     void letSetisfaction(TaxiCenter* taxiCenter);
-};
 
+    friend class boost::serialization::access;
+
+    template<class Archive>
+    void serialize(Archive &ar, const unsigned int version)
+    {
+        ar & start_point;
+        ar & end_point;
+
+    }
+};
 
 #endif //TAXI_PASSENGER_H

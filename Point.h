@@ -27,6 +27,12 @@ public:
     void setX(int xValue);
     void setY(int yValue);
     friend std::ostream& operator<< (std::ostream &out, const Point &s);
+    friend class boost::serialization::access;
+    template<class Archive>
+    void serialize(Archive &ar, const unsigned int version) {
+        ar & xVal;
+        ar & yVal;
+    }
 };
 
 

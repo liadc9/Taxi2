@@ -26,6 +26,8 @@ Driver::Driver(int id, int age, int experience, double satisfaction, ITaxiCab* t
     this->customer = customer;
     this->onTrip = onTrip;
 }
+
+Driver::Driver(){};
 /**
  * getter for driver id
  * @return id

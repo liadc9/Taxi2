@@ -40,6 +40,7 @@ private:
     bool onTrip;
 
 public:
+    Driver();
     Driver(int id, int age, int expirience, double satisfaction, ITaxiCab* taxiCabInfo, Status status,
            Passenger* customer, bool onTrip);
 
@@ -78,7 +79,7 @@ public:
     friend class boost::serialization::access;
 
     template<class Archive>
-    void  Driver::serialize(Archive &ar, const unsigned int version)
+    void serialize(Archive &ar, const unsigned int version)
     {
         ar & id;
         ar & age;
