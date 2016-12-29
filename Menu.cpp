@@ -146,7 +146,7 @@ void Menu:: online(Grid* grid, Socket* socket) {
                             int idCab = driver->getTaxiCabInfo()->getCab_ID();
 
                             /**
-                             * serialize driver into buffer in order to send to client
+                             * serialize ItaxiCab into buffer in order to send to client
                              */
                             ITaxiCab* cab = driver->getTaxiCabInfo();
                             std::string serial_str;
@@ -157,19 +157,29 @@ void Menu:: online(Grid* grid, Socket* socket) {
                             s.flush();
                             socket->sendData(serial_str);
                             serial_str.clear();
-                            /*
-                             * send the client the trip
-                             */
+
                         }
                     }
 
                     for (int i = 0; i < taxiCenter->getTrips().size(); i++) {
 
+                        //get first trip in vector of trips that isn't taken
+                        Trip *trip = taxiCenter->getTrips().at(0);
+                        // call trip creator to find closest driver to passenger location
+                        driver = taxiCenter->tripCreator(trip);
 
+                        /**
+                         * serialize trip into buffer in order to send to client
+                         */
+                        std::string serial_str;
+                        boost::iostreams::back_insert_device<std::string> inserter(serial_str);
+                        boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
+                        boost::archive::binary_oarchive oa(s);
+                        oa << trip;
+                        s.flush();
+                        socket->sendData(serial_str);
+                        serial_str.clear();
 
-                        Trip *trip = taxiCenter->getTrips().at(i);
-                        // call trip creator for the driver to send him to final location
-                        taxiCenter->tripCreator(trip);
                     }
                 }
                 break;

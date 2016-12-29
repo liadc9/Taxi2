@@ -89,10 +89,10 @@ Driver* TaxiCenter::tripCreator(Trip* trip) {
     // finds closest driver to customer
     driver = waze->findClosest(drivers,start,grid);
     State* driverState = driver->getTaxiCabInfo()->getLocation();
-    if((driverState->getState().getX() != start->getState().getX()) &&
-            (driverState->getState().getY() != start->getState().getY())){
-        driver->getTaxiCabInfo()->move(driverState,start,grid);
-    }
+//    if((driverState->getState().getX() != start->getState().getX()) &&
+//            (driverState->getState().getY() != start->getState().getY())){
+//        driver->getTaxiCabInfo()->move(driverState,start,grid);
+//    }
     delete waze;
     return driver;
 }
