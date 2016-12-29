@@ -29,7 +29,7 @@ using namespace std;
  * @return null;
  */
 int main() {
-    Socket* socket = new Udp(1,1212);
+    Socket* socket = new Udp(true,1212);
     socket->initialize();
 
 

@@ -25,7 +25,7 @@ set(SOURCE_FILES Main.cpp Point.cpp Point.h
         LuxuryCab.cpp LuxuryCab.h Map.cpp Map.h Passenger.cpp Passenger.h StandardCab.cpp
         StandardCab.h TaxiCenter.cpp TaxiCenter.h Test/TripTest.cpp Test/StateTest.cpp
         Test/GridTest.cpp Test/StandardCabTest.cpp Test/LuxuryCabTest.cpp Test/BFSTest.cpp
-        Test/PassengerTest.cpp Test/DriverTest.cpp Menu.cpp Menu.h Udp.cpp Udp.h Socket.cpp Socket.h)
+        Test/PassengerTest.cpp Test/DriverTest.cpp Menu.cpp Menu.h Udp.cpp Udp.h Socket.cpp Socket.h Client.cpp Client.h)
 add_executable(Taxi ${SOURCE_FILES} Test/PointTest.cpp)
 target_link_libraries(Taxi gtest gtest_main)
 target_link_libraries(Taxi ${Boost_LIBRARIES})

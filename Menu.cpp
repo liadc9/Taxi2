@@ -135,6 +135,13 @@ void Menu:: online(Grid* grid, Socket* socket) {
                             // now the cab has a driver
                             taxiCenter->getTaxis().at(i)->setHasDriver(true);
                             taxiCenter->AddDriver(driver);
+                            std::string serial_str;
+                            boost::iostreams::back_insert_device<std::string> inserter(serial_str);
+                            boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
+                            boost::archive::binary_oarchive oa(s);
+                            oa << driver;
+                            s.flush();
+                            socket->sendData(serial_str);
                         }
                     }
                     //assign the driver the correct taxi according to vehicle id
