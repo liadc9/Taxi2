@@ -16,8 +16,14 @@ public:
     void setWasHere(int x, int y);
     vector<int> getSizes();
     void afterAlgoRun();
-
     virtual ~Grid();
+    friend class boost::serialization::access;
+    template<class Archive>
+    void serialize(Archive &ar, const unsigned int version) {
+        ar & height;
+        ar & width;
+        ar &  myGrid;
+    }
 
 private:
     int width;

@@ -23,7 +23,7 @@ private:
     State* stop;
     Grid* grid;
 public:
-
+    Trip();
     Trip(int id, State* start, State* stop ,Grid* grid, int passengers, double tariff,int timeOfStart);
     Trip(State* start1, State* stop1, Grid* grid1);
     virtual State* getStart();
@@ -55,6 +55,20 @@ public:
     void setStop(State *stop);
 
     void setGrid(Grid *grid);
+    friend class boost::serialization::access;
+
+    template<class Archive>
+    void serialize(Archive &ar, const unsigned int version)
+    {
+        ar &  ride_id;
+        ar & numOfPassengers;
+        ar & tariff;
+        ar &  start;
+        ar & stop;
+        ar & timeOfStart;
+        ar & grid;
+    }
+
 };
 
 

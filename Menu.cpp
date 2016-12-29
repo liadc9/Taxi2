@@ -91,7 +91,8 @@ void Menu:: online(Grid* grid, Socket* socket) {
 
                 // for each driver in each client send of buffer deserialize into driver.
                 for(int i = 0; i < choice; i++) {
-                    Driver *driver;
+                    Driver *driver = new Driver(0, 0, 0, 0,NULL,
+                            Marride,NULL, false, 0);
                     socket->reciveData(buffer, sizeof(buffer));
                     cout << buffer << endl;
                     string serial_str;

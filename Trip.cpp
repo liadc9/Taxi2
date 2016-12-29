@@ -7,6 +7,8 @@
 #include "Grid.h"
 #include "Trip.h"
 
+//constructor
+Trip::Trip(){};
 /**
  * trip constructor holding all trip info
  * @param id - trip id

@@ -41,6 +41,7 @@ private:
     int taxiID;
 
 public:
+    Driver();
     Driver(int id, int age, int expirience, double satisfaction, ITaxiCab* taxiCabInfo, Status status,
            Passenger* customer, bool onTrip, int taxiID);
 
