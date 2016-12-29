@@ -10,6 +10,24 @@ CMakeFiles/Taxi.dir/BFS.cpp.o: ../Point.h
 CMakeFiles/Taxi.dir/BFS.cpp.o: ../State.h
 CMakeFiles/Taxi.dir/BFS.cpp.o: ../Trip.h
 
+CMakeFiles/Taxi.dir/Client.cpp.o: ../Client.cpp
+CMakeFiles/Taxi.dir/Client.cpp.o: ../Client.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../Driver.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../Grid.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../ISearchable.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../ITaxiCab.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../LuxuryCab.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../Map.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../Parser.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../Passenger.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../Point.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../Socket.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../StandardCab.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../State.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../TaxiCenter.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../Trip.h
+CMakeFiles/Taxi.dir/Client.cpp.o: ../Udp.h
+
 CMakeFiles/Taxi.dir/Driver.cpp.o: ../Driver.cpp
 CMakeFiles/Taxi.dir/Driver.cpp.o: ../Driver.h
 CMakeFiles/Taxi.dir/Driver.cpp.o: ../Grid.h

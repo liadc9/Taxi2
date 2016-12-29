@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/liad/ClionProjects/Taxi/BFS.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/BFS.cpp.o"
+  "/home/liad/ClionProjects/Taxi/Client.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Client.cpp.o"
   "/home/liad/ClionProjects/Taxi/Driver.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Driver.cpp.o"
   "/home/liad/ClionProjects/Taxi/Grid.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/Grid.cpp.o"
   "/home/liad/ClionProjects/Taxi/ISearchable.cpp" "/home/liad/ClionProjects/Taxi/cmake-build-debug/CMakeFiles/Taxi.dir/ISearchable.cpp.o"

@@ -246,6 +246,33 @@ BFS.cpp.s:
 	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/BFS.cpp.s
 .PHONY : BFS.cpp.s
 
+Client.o: Client.cpp.o
+
+.PHONY : Client.o
+
+# target to build an object file
+Client.cpp.o:
+	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/Client.cpp.o
+.PHONY : Client.cpp.o
+
+Client.i: Client.cpp.i
+
+.PHONY : Client.i
+
+# target to preprocess a source file
+Client.cpp.i:
+	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/Client.cpp.i
+.PHONY : Client.cpp.i
+
+Client.s: Client.cpp.s
+
+.PHONY : Client.s
+
+# target to generate assembly for a file
+Client.cpp.s:
+	$(MAKE) -f CMakeFiles/Taxi.dir/build.make CMakeFiles/Taxi.dir/Client.cpp.s
+.PHONY : Client.cpp.s
+
 Driver.o: Driver.cpp.o
 
 .PHONY : Driver.o
@@ -1022,6 +1049,9 @@ help:
 	@echo "... BFS.o"
 	@echo "... BFS.i"
 	@echo "... BFS.s"
+	@echo "... Client.o"
+	@echo "... Client.i"
+	@echo "... Client.s"
 	@echo "... Driver.o"
 	@echo "... Driver.i"
 	@echo "... Driver.s"

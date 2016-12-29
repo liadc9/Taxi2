@@ -23,7 +23,7 @@ public:
     void serialize(Archive &ar, const unsigned int version) {
         ar & height;
         ar & width;
-        ar &  myGrid;
+        ar & **myGrid;
     }
 
 private:

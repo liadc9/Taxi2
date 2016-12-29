@@ -28,6 +28,7 @@ private:
     queue<State*> *path;
     State *finish;
     vector<Point> BFSreturn;
+
 };
 
 

@@ -94,17 +94,18 @@ int main2(int argc, char *argv[]) {
     serial_str.clear();
 
 ///*******************8888888888//////
+    //go false = no trip
 bool go = false;
 while( go == false) {
         std::string sttt = "waiting for trip";
         client->sendData(sttt);
         //deserialize to trip
-    /*    client->reciveData(buffer, sizeof(buffer));
+        client->reciveData(buffer, sizeof(buffer));
         Trip *trip;
         boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s3(device);
         ia >> trip;
         serial_str.clear();
-*/
+
         while (driver->isOnTrip() == true) {
             go = true;
             string serial2_str;

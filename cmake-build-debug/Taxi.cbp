@@ -342,6 +342,12 @@
 		<Unit filename="/home/liad/ClionProjects/Taxi/BFS.h">
 			<Option target="Taxi"/>
 		</Unit>
+		<Unit filename="/home/liad/ClionProjects/Taxi/Client.cpp">
+			<Option target="Taxi"/>
+		</Unit>
+		<Unit filename="/home/liad/ClionProjects/Taxi/Client.h">
+			<Option target="Taxi"/>
+		</Unit>
 		<Unit filename="/home/liad/ClionProjects/Taxi/Driver.cpp">
 			<Option target="Taxi"/>
 		</Unit>

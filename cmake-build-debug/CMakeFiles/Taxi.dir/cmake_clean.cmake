@@ -28,6 +28,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Taxi.dir/Menu.cpp.o"
   "CMakeFiles/Taxi.dir/Udp.cpp.o"
   "CMakeFiles/Taxi.dir/Socket.cpp.o"
+  "CMakeFiles/Taxi.dir/Client.cpp.o"
   "Taxi.pdb"
   "Taxi"
 )
