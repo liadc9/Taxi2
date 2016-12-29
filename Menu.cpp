@@ -83,9 +83,9 @@ void Menu:: online(Grid* grid, Socket* socket) {
         switch (choice) {
             // create driver
             case 1 : {
-
+                //create buffer
                 char buffer[1024];
-
+                // get nummber of drivers to input for server side
                 cin >> choice;
                 cin.ignore();
 
@@ -95,36 +95,16 @@ void Menu:: online(Grid* grid, Socket* socket) {
                             Marride,NULL, false, 0);
                     socket->reciveData(buffer, sizeof(buffer));
                     cout << buffer << endl;
+                    /**
+                     * deserialize buffer into driver object
+                     */
                     string serial_str;
                     boost::iostreams::basic_array_source<char> device(serial_str.c_str(), serial_str.size());
                     boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s2(device);
                     boost::archive::binary_iarchive ia(s2);
                     ia >> driver;
-                    //disserialize object buffer************************************
 
-
-                    //getline(cin, information);
-                    // parse the data given
-                    parsedData = parse.DataSplit(buffer);
                     Status stat;
-
-                    // properly reeive all data from parser
-                    id = boost::any_cast<int>(parsedData[0]);
-                    age = boost::any_cast<int>(parsedData[1]);
-                    status = boost::any_cast<char>(parsedData[2]);
-
-                    if (status == 'S') {
-                        stat = Single;
-                    } else if (status == 'M') {
-                        stat = Marride;
-                    } else if (status == 'D') {
-                        stat = Divorced;
-                    } else if (status == 'W') {
-                        stat = Widowed;
-                    }
-
-                    expirience = boost::any_cast<int>(parsedData[3]);
-                    vehicle = boost::any_cast<int>(parsedData[4]);
                     double satisfaction = 0;
 
                     //assign the driver the correct taxi according to vehicle id
@@ -137,6 +117,9 @@ void Menu:: online(Grid* grid, Socket* socket) {
                             taxiCenter->getTaxis().at(i)->setHasDriver(true);
                             taxiCenter->AddDriver(driver);
                             std::string serial_str;
+                            /**
+                             * serialize driver into buffer in order to send to client
+                             */
                             boost::iostreams::back_insert_device<std::string> inserter(serial_str);
                             boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
                             boost::archive::binary_oarchive oa(s);
@@ -156,7 +139,9 @@ void Menu:: online(Grid* grid, Socket* socket) {
                             taxiCenter->AddDriver(driver);
                             int idCab = driver->getTaxiCabInfo()->getCab_ID();
 
-                            // serealization goes here  ******
+                            /**
+                             * serialize driver into buffer in order to send to client
+                             */
                             std::string serial_str;
                             boost::iostreams::back_insert_device<std::string> inserter(serial_str);
                             boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
@@ -165,8 +150,19 @@ void Menu:: online(Grid* grid, Socket* socket) {
                             s.flush();
                             socket->sendData(serial_str);
 
+                            /*
+                             * send the client the trip
+                             */
+                            for (int i = 0; i < taxiCenter->getTrips().size(); i++) {
 
-                            //To Do: /socket->sendData(driver)
+
+
+                                Trip *trip = taxiCenter->getTrips().at(i);
+                                // call trip creator for the driver to send him to final location
+                                taxiCenter->tripCreator(trip);
+                            }
+
+
                         }
                     }
 
@@ -310,3 +306,30 @@ void Menu:: online(Grid* grid, Socket* socket) {
 
 
 };
+
+
+/*
+ * old parser for case 1:
+                    //getline(cin, information);
+                    parse the data given
+                    parsedData = parse.DataSplit(buffer);
+
+
+                    // properly receive all data from parser
+                    id = boost::any_cast<int>(parsedData[0]);
+                    age = boost::any_cast<int>(parsedData[1]);
+                    status = boost::any_cast<char>(parsedData[2]);
+
+                    if (status == 'S') {
+                        stat = Single;
+                    } else if (status == 'M') {
+                        stat = Marride;
+                    } else if (status == 'D') {
+                        stat = Divorced;
+                    } else if (status == 'W') {
+                        stat = Widowed;
+                    }
+
+                    expirience = boost::any_cast<int>(parsedData[3]);
+                    vehicle = boost::any_cast<int>(parsedData[4]);
+                    */
