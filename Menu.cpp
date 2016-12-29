@@ -103,6 +103,7 @@ void Menu:: online(Grid* grid, Socket* socket) {
                     boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s2(device);
                     boost::archive::binary_iarchive ia(s2);
                     ia >> driver;
+                    serial_str.clear();
 
                     Status stat;
                     double satisfaction = 0;
@@ -116,16 +117,19 @@ void Menu:: online(Grid* grid, Socket* socket) {
                             // now the cab has a driver
                             taxiCenter->getTaxis().at(i)->setHasDriver(true);
                             taxiCenter->AddDriver(driver);
-                            std::string serial_str;
+
                             /**
-                             * serialize driver into buffer in order to send to client
+                             * serialize ItaxiCab into buffer in order to send to client
                              */
+                            ITaxiCab* cab = driver->getTaxiCabInfo();
+                            std::string serial_str;
                             boost::iostreams::back_insert_device<std::string> inserter(serial_str);
                             boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
                             boost::archive::binary_oarchive oa(s);
-                            oa << driver;
+                            oa << cab;
                             s.flush();
                             socket->sendData(serial_str);
+                            serial_str.clear();
                         }
                     }
                     //assign the driver the correct taxi according to vehicle id
@@ -142,30 +146,28 @@ void Menu:: online(Grid* grid, Socket* socket) {
                             /**
                              * serialize driver into buffer in order to send to client
                              */
+                            ITaxiCab* cab = driver->getTaxiCabInfo();
                             std::string serial_str;
                             boost::iostreams::back_insert_device<std::string> inserter(serial_str);
                             boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
                             boost::archive::binary_oarchive oa(s);
-                            oa << driver;
+                            oa << cab;
                             s.flush();
                             socket->sendData(serial_str);
-
+                            serial_str.clear();
                             /*
                              * send the client the trip
                              */
-                            for (int i = 0; i < taxiCenter->getTrips().size(); i++) {
-
-
-
-                                Trip *trip = taxiCenter->getTrips().at(i);
-                                // call trip creator for the driver to send him to final location
-                                taxiCenter->tripCreator(trip);
-                            }
-
-
                         }
                     }
+                    for (int i = 0; i < taxiCenter->getTrips().size(); i++) {
 
+
+
+                        Trip *trip = taxiCenter->getTrips().at(i);
+                        // call trip creator for the driver to send him to final location
+                        taxiCenter->tripCreator(trip);
+                    }
                 }
                 break;
 

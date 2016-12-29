@@ -1,6 +1,7 @@
 /**
  * This is the Client side application
  */
+
 #include <cstdlib>
 #include <boost/any.hpp>
 #include "Socket.h"
@@ -96,6 +97,7 @@ int main2(int argc, char *argv[]) {
 ///*******************8888888888//////
     //go false = no trip
 bool go = false;
+
 while( go == false) {
         std::string sttt = "waiting for trip";
         client->sendData(sttt);
@@ -108,6 +110,7 @@ while( go == false) {
 
         while (driver->isOnTrip() == true) {
             go = true;
+            //serialize
             string serial2_str;
             boost::iostreams::back_insert_device<std::string> inserter(serial2_str);
             boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
@@ -118,12 +121,20 @@ while( go == false) {
             serial2_str.clear();
             Point *location;
             client->reciveData(buffer, sizeof(buffer));
+            //deserialize
             boost::iostreams::basic_array_source<char> device(serial2_str.c_str(), serial2_str.size());
             boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s2(device);
             boost::archive::binary_iarchive ia(s2);
             ia >> location;
             taxi->getLocation()->getState().setX(location->getX());
             taxi->getLocation()->getState().setY(location->getY());
+            //trip ends
+            if( location->getX() == trip->getdest()->getState().getX()){
+                if(location->getY() == trip->getdest()->getState().getY()){
+                    driver->setOnTrip(false);
+                    go = false;
+                }
+            }
         }
 
 }
