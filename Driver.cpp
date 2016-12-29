@@ -16,7 +16,7 @@
  * @param onTrip - is the driver occupied with customers
  */
 Driver::Driver(int id, int age, int experience, double satisfaction, ITaxiCab* taxiCabInfo, Status status,
-               Passenger* customer, bool onTrip){
+               Passenger* customer, bool onTrip, int taxiID){
     this->id = id;
     this->age = age;
     this->experience = experience;
@@ -25,6 +25,7 @@ Driver::Driver(int id, int age, int experience, double satisfaction, ITaxiCab* t
     this->status = status;
     this->customer = customer;
     this->onTrip = onTrip;
+    this->taxiID = taxiID;
 }
 
 Driver::Driver(){};

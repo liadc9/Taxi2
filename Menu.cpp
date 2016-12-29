@@ -41,6 +41,7 @@ double tariff;
 int taxi_type;
 char manufacturer;
 char color;
+int taxiID;
 
 
 
@@ -88,7 +89,7 @@ void Menu:: online(Grid* grid, Socket* socket) {
                 cin >> choice;
                 cin.ignore();
 
-
+                // for each driver in each client send of buffer deserialize into driver.
                 for(int i = 0; i < choice; i++) {
                     Driver *driver;
                     socket->reciveData(buffer, sizeof(buffer));
@@ -128,8 +129,9 @@ void Menu:: online(Grid* grid, Socket* socket) {
                     //assign the driver the correct taxi according to vehicle id
                     for (int i = 0; i < taxiCenter->getTaxis().size(); i++) {
                         if (taxiCenter->getTaxis().at(i)->getCab_ID() == vehicle) {
+                            taxiID = taxiCenter->getTaxis().at(i)->getCab_ID();
                             Driver *driver = new Driver(id, age, expirience, satisfaction,
-                                                        taxiCenter->getTaxis().at(i), stat, NULL, false);
+                                                        taxiCenter->getTaxis().at(i), stat, NULL, false, taxiID);
                             // now the cab has a driver
                             taxiCenter->getTaxis().at(i)->setHasDriver(true);
                             taxiCenter->AddDriver(driver);
@@ -138,13 +140,24 @@ void Menu:: online(Grid* grid, Socket* socket) {
                     //assign the driver the correct taxi according to vehicle id
                     for (int i = 0; i < taxiCenter->getLuxTaxis().size(); i++) {
                         if (taxiCenter->getLuxTaxis().at(i)->getCab_ID() == vehicle) {
+                            taxiID = taxiCenter->getLuxTaxis().at(i)->getCab_ID();
                             Driver *driver = new Driver(id, age, expirience, satisfaction,
-                                                        taxiCenter->getTaxis().at(i), stat, NULL, false);
+                                                        taxiCenter->getTaxis().at(i), stat, NULL, false, taxiID);
                             // now the cab has a driver
                             taxiCenter->getLuxTaxis().at(i)->setHasDriver(true);
                             taxiCenter->AddDriver(driver);
                             int idCab = driver->getTaxiCabInfo()->getCab_ID();
+
                             // serealization goes here  ******
+                            std::string serial_str;
+                            boost::iostreams::back_insert_device<std::string> inserter(serial_str);
+                            boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
+                            boost::archive::binary_oarchive oa(s);
+                            oa << driver;
+                            s.flush();
+                            socket->sendData(serial_str);
+
+
                             //To Do: /socket->sendData(driver)
                         }
                     }

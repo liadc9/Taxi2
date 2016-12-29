@@ -51,7 +51,7 @@ protected:
     }
 public:
     //constructor
-    DriverTest() : driver(12345, 25, 5, 3.5, taxiCab,  Single, customer, false) {}
+    DriverTest() : driver(12345, 25, 5, 3.5, taxiCab,  Single, customer, false, 12345) {}
 };
 //checks getId function
 TEST_F(DriverTest, getId_tester){

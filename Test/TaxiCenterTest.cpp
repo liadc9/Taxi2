@@ -30,11 +30,11 @@ protected:
         state2 = new State(*p2,NULL,false);
         grid = new Grid(5,5);
         trip = new Trip(1,state1,state2,grid,2 ,40,1);
-        cab = new StandardCab(12345, 0,RED, TESLA, 1, 1, state1,false);
+        cab = new StandardCab(12345, 0,RED, TESLA, 1, 1, state1, false);
         luxus = new LuxuryCab(12345, 0,WHITE, HONDA, 2, 2, state2,false);
         customer = new Passenger(state1,state2);
-        driver = new Driver(123, 25, 5, 3.5, cab,  Single, NULL, false);
-        driver2 = new Driver(123, 25, 5, 3.5, luxus,  Single, NULL,false);
+        driver = new Driver(123, 25, 5, 3.5, cab,  Single, NULL, false, 12345);
+        driver2 = new Driver(123, 25, 5, 3.5, luxus,  Single, NULL,false, 12345);
     }
     virtual void TearDown(){
         cout << "Tearing down" << endl;
