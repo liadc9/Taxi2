@@ -96,11 +96,11 @@ void Menu:: online(Grid* grid, Socket* socket) {
                     Driver *driver = new Driver(0, 0, 0, 0,NULL,
                             Marride,NULL, false, 0);
                     socket->reciveData(buffer, sizeof(buffer));
-                    cout << buffer << endl;
+
                     /**
                      * deserialize buffer into driver object
                      */
-                    string serial_str;
+                    string serial_str(buffer, sizeof(buffer));
                     boost::iostreams::basic_array_source<char> device(serial_str.c_str(), serial_str.size());
                     boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s2(device);
                     boost::archive::binary_iarchive ia(s2);
