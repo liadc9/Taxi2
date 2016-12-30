@@ -71,10 +71,8 @@ int main2(int argc, char *argv[]) {
     double satisfaction = 0;
     taxiID = -1;
 
-    //serialize
-    Driver *driver = new Driver(id, age, expirience, satisfaction,
-                                NULL, stat, NULL, false, taxiID);
-
+    //serialize driver
+    Driver *driver = new Driver(id, age, expirience, satisfaction, NULL, stat, NULL, false, taxiID);
     std::string serial_str;
     boost::iostreams::back_insert_device<std::string> inserter(serial_str);
     boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
@@ -88,7 +86,8 @@ int main2(int argc, char *argv[]) {
 //deserialize to taxi
     ITaxiCab* taxi;
     client->reciveData(buffer, sizeof(buffer));
-    boost::iostreams::basic_array_source<char> device(serial_str.c_str(), serial_str.size());
+    string serial_str2(buffer, sizeof(buffer));
+    boost::iostreams::basic_array_source<char> device(serial_str2.c_str(), serial_str2.size());
     boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s2(device);
     boost::archive::binary_iarchive ia(s2);
     ia >> taxi;
@@ -104,27 +103,33 @@ while( go == false) {
         //deserialize to trip
         client->reciveData(buffer, sizeof(buffer));
         Trip *trip;
+        std::string tripStr(buffer, sizeof(buffer));
+        boost::iostreams::basic_array_source<char> device(tripStr.c_str(), tripStr.size());
         boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s3(device);
+        boost::archive::binary_iarchive ia(s3);
         ia >> trip;
-        serial_str.clear();
+        tripStr.clear();
 
         while (driver->isOnTrip() == true) {
             go = true;
             //serialize
-            string serial2_str;
-            boost::iostreams::back_insert_device<std::string> inserter(serial2_str);
+            string serial3_str;
+            boost::iostreams::back_insert_device<std::string> inserter(serial3_str);
             boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
             boost::archive::binary_oarchive oa(s);
             oa << go;
             s.flush();
-            client->sendData(serial2_str);
-            serial2_str.clear();
-            Point *location;
+            client->sendData(serial3_str);
+            serial3_str.clear();
+
+
             client->reciveData(buffer, sizeof(buffer));
-            //deserialize
-            boost::iostreams::basic_array_source<char> device(serial2_str.c_str(), serial2_str.size());
-            boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s2(device);
-            boost::archive::binary_iarchive ia(s2);
+            //deserialize location as point
+            Point *location;
+            std::string locationStr(buffer, sizeof(buffer));
+            boost::iostreams::basic_array_source<char> device(locationStr.c_str(), locationStr.size());
+            boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s4(device);
+            boost::archive::binary_iarchive ia(s4);
             ia >> location;
             taxi->getLocation()->getState().setX(location->getX());
             taxi->getLocation()->getState().setY(location->getY());
