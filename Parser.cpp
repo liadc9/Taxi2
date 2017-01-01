@@ -76,8 +76,10 @@ vector<boost::any> Parser:: DataSplit(string str) {
                 isNum = isNum * (int) (pow(10, seperator - j - 1));
                 // the only case we need a double is one specific time:
             } else if (isdigit(str[j]) && curentNum == 6){
-                dub = atof(str.c_str());
-                j = j + str.size() - 1;
+                string dummy = str;
+                dummy.erase((unsigned long) seperator, dummy.size()-1);
+                dub = atof(dummy.c_str());
+                j = j + dummy.size() - 1;
             }
         }
         // remove all part of the string we already parsed

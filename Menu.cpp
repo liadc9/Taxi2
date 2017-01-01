@@ -325,6 +325,7 @@ void Menu:: online(Grid* grid, Socket* socket) {
                     s.flush();
                     socket->sendData(serial_str);
                     serial_str.clear();
+                     socket->reciveData(buffer, sizeof(buffer));
                 }
                 //if we have reached end of route for the driver
                 if (newPosition->getState().getX() == trip->getdest()->getState().getX() &&
@@ -335,6 +336,7 @@ void Menu:: online(Grid* grid, Socket* socket) {
                     taxiCenter->getTrips().erase(taxiCenter->getTrips().begin()+x);
                     delete trip;
                 }
+
             }
                 break;
             // no default requirement
