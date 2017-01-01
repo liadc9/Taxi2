@@ -18,7 +18,7 @@ Trip::Trip(){};
  * @param passengers - passengers in trip
  * @param tariff - cost of trip
  */
-Trip::Trip(int id, State* start1, State* stop1, Grid* grid1, int passengers, double tariff, int timeOfStart){
+Trip::Trip(int id, State* start1, State* stop1, Grid* grid1, int passengers, double tariff, int timeOfStart, bool happening){
     this->ride_id = id;
     this->start = start1;
     this->stop = stop1;
@@ -26,6 +26,8 @@ Trip::Trip(int id, State* start1, State* stop1, Grid* grid1, int passengers, dou
     this->numOfPassengers = passengers;
     this->tariff = tariff;
     this->timeOfStart = timeOfStart;
+    this->happening = happening;
+
 }
 /**
  * contructor of trip
@@ -144,4 +146,12 @@ int Trip::getTimeOfStart() {
 
 void Trip::setTimeOfStart(int timeOfStart) {
     Trip::timeOfStart = timeOfStart;
+}
+
+bool Trip::getHappening(){
+    return happening;
+}
+
+void Trip::setHappening(bool happening) {
+    Trip::happening = happening;
 }

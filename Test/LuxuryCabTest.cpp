@@ -20,7 +20,8 @@ public:
         p1 = new Point(0,0);
         dest = new State(Point(2,2),NULL,false);
         location = new State(*p1,NULL, false);
-        cab = new LuxuryCab(12345, 0,RED, HONDA, 2, 2, location,false);
+        vector<Point> route;
+        cab = new LuxuryCab(12345, 0,RED, HONDA, 2, 2, location, false, route);
         grid = new Grid(4, 4);
     }
     virtual void TearDown(){
@@ -94,7 +95,7 @@ TEST_F(LuxuryCabTest,setLocation_tester) {
 
 //checks  move function by seeing a diference in the location of the cab
 TEST_F(LuxuryCabTest,move_tester) {
-    cab->move(location,dest,grid);
+    cab->findClosestDriver(location,dest,grid);
     ASSERT_EQ(cab->getLocation()->getState().getX(),dest->getState().getX());
     ASSERT_EQ(cab->getLocation()->getState().getY(),dest->getState().getY());
 }

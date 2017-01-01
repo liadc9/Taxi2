@@ -33,8 +33,9 @@ protected:
         state1 = new State(*p1,NULL,false);
         end1 = new State(*p2,NULL,false);
         location = new State(*p1,NULL, false);
-        taxiCab = new StandardCab(12345, 0,RED, HONDA, 1, 1, location, false);
-        taxiCab2 = new LuxuryCab(12345, 1,RED, HONDA, 2, 2, location, false);
+        vector<Point> route;
+        taxiCab = new StandardCab(12345, 0,RED, HONDA, 1, 1, location, false, route);
+        taxiCab2 = new LuxuryCab(12345, 1,RED, HONDA, 2, 2, location, false, route);
         customer= new Passenger(state1,end1);
     }
     virtual void TearDown(){

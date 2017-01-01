@@ -22,6 +22,8 @@
 #include <boost/serialization/access.hpp>
 #include "State.h"
 #include "Grid.h"
+#include "Point.h"
+#include "Trip.h"
 
 enum Color {RED = 0,BLUE = 1,GREEN = 2,PINK = 3,WHITE = 4};
 enum Model{HONDA,SUBARU,TESLA,FIAT};
@@ -39,11 +41,13 @@ protected:
     int speed;
     State* location;
     bool hasDriver;
+    vector<Point> route;
+    bool occupied;
 
 public:
     ITaxiCab();
     ITaxiCab(int Cab_ID, int distance_made, Color color, Model model, int coeficient,
-              int speed, State* location, bool hasDriver);
+              int speed, State* location, bool hasDriver, vector<Point> route);
     ~ITaxiCab(){}
 
     int getCab_ID();
@@ -79,7 +83,13 @@ public:
 
     void setLocation(State* location);
 
-    virtual void move(State* start ,State* rideStart, Grid* grid) = 0;
+    vector<Point> getRoute();
+
+    void setRoute(Trip* trip);
+
+    virtual void findClosestDriver(State* start ,State* rideStart, Grid* grid) = 0;
+
+    virtual bool move(ITaxiCab cab) = 0;
 
     friend class boost::serialization::access;
     template<class Archive>

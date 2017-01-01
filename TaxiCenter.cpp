@@ -86,9 +86,14 @@ Driver* TaxiCenter::tripCreator(Trip* trip) {
     State* start = trip->getStart();
     State* end = trip->getdest();
     Grid* grid = trip->getGrid();
+    trip->setHappening(true);
     // finds closest driver to customer
     driver = waze->findClosest(drivers,start,grid);
-    State* driverState = driver->getTaxiCabInfo()->getLocation();
+    // creates the route for this taxi using BFS
+    driver->getTaxiCabInfo()->setRoute(trip);
+    //cab is occupied
+    driver->setOnTrip(true);
+//    State* driverState = driver->getTaxiCabInfo()->getLocation();
 //    if((driverState->getState().getX() != start->getState().getX()) &&
 //            (driverState->getState().getY() != start->getState().getY())){
 //        driver->getTaxiCabInfo()->move(driverState,start,grid);

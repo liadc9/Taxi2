@@ -17,6 +17,7 @@ private:
     double tariff;
     int meter_passed;
     int timeOfStart;
+    bool happening;
 
 private:
     State* start;
@@ -24,7 +25,7 @@ private:
     Grid* grid;
 public:
     Trip();
-    Trip(int id, State* start, State* stop ,Grid* grid, int passengers, double tariff,int timeOfStart);
+    Trip(int id, State* start, State* stop ,Grid* grid, int passengers, double tariff,int timeOfStart, bool happening);
     Trip(State* start1, State* stop1, Grid* grid1);
     virtual State* getStart();
     virtual State* getdest();
@@ -35,6 +36,10 @@ public:
     int getNumOfPassengers();
 
     double getTariff();
+
+    bool getHappening();
+
+    void setHappening(bool happening);
 
     int getMeter_passed();
 

@@ -38,7 +38,7 @@ public:
         delete grid2;
     }
     //constructor
-    TripTest() : trip1(0, state1,state2,grid,2,40,1) , trip2(state2,state1,grid){}
+    TripTest() : trip1(0, state1,state2,grid,2,40,1, true) , trip2(state2,state1,grid){}
 };/*
 //checks getStart function by comparing two different start points of tow trips
 TEST_F(TripTest, getStart_test){

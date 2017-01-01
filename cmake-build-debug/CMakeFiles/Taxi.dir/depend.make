@@ -324,6 +324,7 @@ CMakeFiles/Taxi.dir/Test/LuxuryCabTest.cpp.o: ../Map.h
 CMakeFiles/Taxi.dir/Test/LuxuryCabTest.cpp.o: ../Point.h
 CMakeFiles/Taxi.dir/Test/LuxuryCabTest.cpp.o: ../State.h
 CMakeFiles/Taxi.dir/Test/LuxuryCabTest.cpp.o: ../Test/LuxuryCabTest.cpp
+CMakeFiles/Taxi.dir/Test/LuxuryCabTest.cpp.o: ../Trip.h
 
 CMakeFiles/Taxi.dir/Test/PassengerTest.cpp.o: ../lib/googletest-master/googletest/include/gtest/gtest-death-test.h
 CMakeFiles/Taxi.dir/Test/PassengerTest.cpp.o: ../lib/googletest-master/googletest/include/gtest/gtest-message.h
@@ -416,6 +417,7 @@ CMakeFiles/Taxi.dir/Test/StandardCabTest.cpp.o: ../Point.h
 CMakeFiles/Taxi.dir/Test/StandardCabTest.cpp.o: ../StandardCab.h
 CMakeFiles/Taxi.dir/Test/StandardCabTest.cpp.o: ../State.h
 CMakeFiles/Taxi.dir/Test/StandardCabTest.cpp.o: ../Test/StandardCabTest.cpp
+CMakeFiles/Taxi.dir/Test/StandardCabTest.cpp.o: ../Trip.h
 
 CMakeFiles/Taxi.dir/Test/StateTest.cpp.o: ../lib/googletest-master/googletest/include/gtest/gtest-death-test.h
 CMakeFiles/Taxi.dir/Test/StateTest.cpp.o: ../lib/googletest-master/googletest/include/gtest/gtest-message.h

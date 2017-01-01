@@ -18,7 +18,7 @@
  * @param hasDriver - das cab have a driver
  */
 ITaxiCab::ITaxiCab(int Cab_ID, int distance_made, Color color, Model model, int coeficient,
-                     int speed,State* location, bool hasDriver){
+                     int speed,State* location, bool hasDriver, vector<Point> route){
     this->Cab_ID = Cab_ID;
     this->distance_made = distance_made;
     this->color = color;
@@ -27,6 +27,7 @@ ITaxiCab::ITaxiCab(int Cab_ID, int distance_made, Color color, Model model, int 
     this->speed = speed;
     this->location = location;
     this->hasDriver = hasDriver;
+    this->route = route;
 }
 
 /**
@@ -142,3 +143,13 @@ void ITaxiCab::setHasDriver(bool hasDriver) {
     ITaxiCab::hasDriver = hasDriver;
 }
 ITaxiCab::ITaxiCab(){};
+
+vector<Point> ITaxiCab::getRoute(){
+    return route;
+}
+
+void ITaxiCab::setRoute(Trip* trip){
+
+    BFS* bfs = new BFS(trip);
+    route = bfs->AlgoRun();
+}

@@ -42,6 +42,7 @@ int taxi_type;
 char manufacturer;
 char color;
 int taxiID;
+int timeOfStart;
 
 
 
@@ -70,11 +71,13 @@ Menu:: Menu(){
  * @param grid - our given grid created in main.
  */
 void Menu:: online(Grid* grid, Socket* socket) {
-
+    string serial_str;
+    Driver *driver;
     int choice = 0;
     TaxiCenter *taxiCenter;
     taxiCenter = new TaxiCenter();
     int timer = 0;
+    bool endOfRoute = false;
     // while program doesn't terminate
     while(choice != 7) {
         // get user input for choice
@@ -198,12 +201,15 @@ void Menu:: online(Grid* grid, Socket* socket) {
                 yEnd = boost::any_cast<int>(parsedData[4]);
                 numPassengers = boost::any_cast<int>(parsedData[5]);
                 tariff = boost::any_cast<double>(parsedData[6]);
+                timeOfStart = boost::any_cast<int>(parsedData[7]);
 
                 State *start = new State(Point(xStart, yStart), NULL, false);
                 State *end = new State(Point(xEnd, yEnd), NULL, false);
+
+
 //change 1 to the real time of start that we get from the terminal
                 // create trip accroding to all info
-                Trip *trip = new Trip(id, start, end, grid, numPassengers, tariff,1);
+                Trip *trip = new Trip(id, start, end, grid, numPassengers, tariff, timeOfStart, false);
                 taxiCenter->AddTrip(trip);
                 break;
             }
@@ -242,15 +248,15 @@ void Menu:: online(Grid* grid, Socket* socket) {
                 } else if (color == 'W') {
                     enumColor = WHITE;
                 }
-
+                vector<Point> route;
                 State *location = new State(Point(0,0), NULL, false);
 
                 // create cab according to the data
                 if (taxi_type == 1) {
-                    StandardCab *cab = new StandardCab(id, 0, enumColor, enumModel, taxi_type, 0, location, false);
+                    StandardCab *cab = new StandardCab(id, 0, enumColor, enumModel, taxi_type, 0, location, false, route);
                     taxiCenter->AddTaxiCab(cab);
                 } else {
-                    LuxuryCab *lCab = new LuxuryCab(id, 0, enumColor, enumModel, taxi_type, 0, location, false);
+                    LuxuryCab *lCab = new LuxuryCab(id, 0, enumColor, enumModel, taxi_type, 0, location, false, route);
                     taxiCenter->AddTaxiLux(lCab);
                 }
 
@@ -284,6 +290,49 @@ void Menu:: online(Grid* grid, Socket* socket) {
             case 9 : {
 
                 timer++;
+
+
+                /**
+                 * deserialize buffer into string "waiting for move"
+                 */
+                string check = "waiting for move";
+                string receive;
+                boost::iostreams::basic_array_source<char> device(serial_str.c_str(), serial_str.size());
+                boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s2(device);
+                boost::archive::binary_iarchive ia(s2);
+                ia >> receive;
+                serial_str.clear();
+
+                if( receive == check) {
+                    //if driver has no trip and it is time for a trip to begin assign driver a trip
+                    if (driver->isOnTrip() == false && trip.timeofstart == timer) {
+                        for (int i = 0; i < taxiCenter->getTrips().size(); i++) {
+                            Trip *trip = taxiCenter->getTrips().at(i);
+                            // call trip creator for the driver to send him to final location
+                            taxiCenter->tripCreator(trip);
+                            // if driver is on a trip and timer allows movement.
+                        }
+                        // updates driver's taxi to move to the next position in bfs route
+                    } else if (driver->isOnTrip() == true && trip.timeofstart < timer && !endOfRoute) {
+                        endOfRoute = driver->getTaxiCabInfo()->move(*driver->getTaxiCabInfo());
+                        //if we have reached end of route for the driver
+                    } else if (endOfRoute == true && driver->isOnTrip() == true) {
+                        // after setting to false, next trip will override old trip info
+                        driver->setOnTrip(false);
+                    }
+                }
+
+                /**
+                * serialize trip into buffer in order to send to client
+                */
+                std::string serial_str;
+                boost::iostreams::back_insert_device<std::string> inserter(serial_str);
+                boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
+                boost::archive::binary_oarchive oa(s);
+                oa << driver;
+                s.flush();
+                socket->sendData(serial_str);
+                serial_str.clear();
 
             }
             // no default requirement
