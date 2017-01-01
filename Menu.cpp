@@ -303,23 +303,32 @@ void Menu:: online(Grid* grid, Socket* socket) {
                             s.flush();
                             socket->sendData(serial_str);
                             serial_str.clear();
+                            socket->reciveData(buffer, sizeof(buffer));
                             break;
                         }
                     }
                 }
 
-                else if (driver->isOnTrip() == true ) {
+                 if (driver->isOnTrip() == true ) {
                     State* end = trip->getdest();
                     Grid* grid = trip->getGrid();
                     State* cabState = driver->getTaxiCabInfo()->getLocation();
                     newPosition = driver->getTaxiCabInfo()->move(cabState,end,grid);
 
-                    //serialize newPosition
-
-
+                    //serialize newPosition as point
+                    Point* position = new Point(newPosition->getState().getX(),newPosition->getState().getY());
+                    std::string serial_str;
+                    boost::iostreams::back_insert_device<std::string> inserter(serial_str);
+                    boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
+                    boost::archive::binary_oarchive oa(s);
+                    oa << position;
+                    s.flush();
+                    socket->sendData(serial_str);
+                    serial_str.clear();
                 }
                 //if we have reached end of route for the driver
-                if (newPosition == trip->getdest()) {
+                if (newPosition->getState().getX() == trip->getdest()->getState().getX() &&
+                        newPosition->getState().getY() == trip->getdest()->getState().getY()) {
                     // after setting to false, next trip will override old trip info
                     driver->setOnTrip(false);
                     //erase the trip

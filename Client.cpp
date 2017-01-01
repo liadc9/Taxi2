@@ -109,6 +109,7 @@ while( go == false) {
         boost::archive::binary_iarchive ia(s3);
         ia >> trip;
         tripStr.clear();
+        driver->setOnTrip(true);
 
         while (driver->isOnTrip() == true) {
             go = true;
