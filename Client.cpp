@@ -4,11 +4,11 @@
 
 #include <cstdlib>
 #include <boost/any.hpp>
-#include "Socket.h"
-#include "Udp.h"
-#include "Parser.h"
-#include "Driver.h"
-#include "Client.h"
+#include "src/sockets/Socket.h"
+#include "src/sockets/Udp.h"
+#include "src/Parser.h"
+#include "src/Driver.h"
+#include <unistd.h>
 
 
 using namespace std;
@@ -23,7 +23,7 @@ using namespace std;
  * @param argv - recevied args, the port num
  * @return
  */
-int main2(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
     int id;
     int age;
     char status;

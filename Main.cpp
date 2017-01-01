@@ -1,20 +1,19 @@
 /**
  * This is the main Class which is used in order to run the BFS algorithm on the grid.
  */
-#include "Point.h"
+#include "src/Point.h"
 #include <iostream>
 #include <vector>
 #include <string>
-#include "Parser.h"
-#include "Trip.h"
-#include "Grid.h"
-#include "BFS.h"
-#include "TaxiCenter.h"
-#include <gtest/gtest.h>
+#include "src/Parser.h"
+#include "src/Trip.h"
+#include "src/Grid.h"
+#include "src/BFS.h"
+#include "src/TaxiCenter.h"
 #include <boost/any.hpp>
-#include "Menu.h"
-#include "Main.h"
-#include "Udp.h"
+#include "src/Menu.h"
+#include "src/sockets/Udp.h"
+//#include <gtest/gtest.h>
 
 
 using namespace std;

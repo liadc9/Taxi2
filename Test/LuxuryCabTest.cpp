@@ -95,7 +95,7 @@ TEST_F(LuxuryCabTest,setLocation_tester) {
 
 //checks  move function by seeing a diference in the location of the cab
 TEST_F(LuxuryCabTest,move_tester) {
-    cab->findClosestDriver(location,dest,grid);
+    cab->move(location,dest,grid);
     ASSERT_EQ(cab->getLocation()->getState().getX(),dest->getState().getX());
     ASSERT_EQ(cab->getLocation()->getState().getY(),dest->getState().getY());
 }

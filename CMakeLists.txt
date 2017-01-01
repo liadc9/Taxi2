@@ -1,37 +1,29 @@
 cmake_minimum_required(VERSION 3.6)
 project(Taxi)
 
-set(CMAKE_CXX_STANDARD 98)
-add_subdirectory(lib/googletest-master)
-include_directories(lib/googletest-master/googletest/include)
-include_directories(lib/googletest-master/googlemock/include)
+#set(core_sockets src/sockets/Socket.cpp src/sockets/Udp.cpp src/sockets/Tcp.cpp)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(BOOST_ROOT CACHE PATH "/usr/include/boost/")
 find_package(Boost 1.58.0 COMPONENTS serialization system)
 include_directories(${Boost_INCLUDE_DIR})
+#add_library(sockets ${core_sockets})
 
-#include_directories("/home/liad/.linuxbrew/Cellar/boost/1.62.0/include")
-#set(BOOST_ROOT "/home/liad/.linuxbrew/Cellar/boost/1.62.0/include")
-#set(Boost_Path "/home/liad/.linuxbrew/Cellar/boost/1.62.0/include")
 
-#set(Boost_INCLUDE_DIR "${Boost_Path}/boost")
+set(core_sockets src/Point.cpp src/Point.h
+        src/Grid.h src/Grid.cpp src/BFS.h src/BFS.cpp src/ISearchable.h src/ISearchable.cpp
+        src/Parser.h src/Parser.cpp src/State.h src/State.cpp src/Trip.h src/Trip.cpp
+        src/Driver.cpp src/Driver.h src/ITaxiCab.h src/ITaxiCab.cpp src/Waze.cpp src/Waze.h
+        src/LuxuryCab.cpp src/LuxuryCab.h src/Map.cpp src/Map.h src/Passenger.cpp src/Passenger.h
+        src/StandardCab.cpp src/StandardCab.h src/TaxiCenter.cpp src/TaxiCenter.h
+        src/Menu.cpp src/Menu.h src/sockets/Udp.cpp src/sockets/Udp.h
+        src/sockets/Socket.cpp src/sockets/Socket.h)
 
-#include_directories("/Users/liad/Downloads/boost_1_62_0")
 
-set(SOURCE_FILES Main.cpp Point.cpp Point.h
-        Grid.h Grid.cpp BFS.h BFS.cpp ISearchable.h ISearchable.cpp Main.h
-        Parser.h Parser.cpp State.h State.cpp Trip.h Trip.cpp Test/PointTest.cpp
-        Driver.cpp Driver.h ITaxiCab.h ITaxiCab.cpp Test/TaxiCenterTest.cpp Waze.cpp Waze.h
-        LuxuryCab.cpp LuxuryCab.h Map.cpp Map.h Passenger.cpp Passenger.h StandardCab.cpp
-        StandardCab.h TaxiCenter.cpp TaxiCenter.h Test/TripTest.cpp Test/StateTest.cpp
-        Test/GridTest.cpp Test/StandardCabTest.cpp Test/LuxuryCabTest.cpp Test/BFSTest.cpp
-        Test/PassengerTest.cpp Test/DriverTest.cpp Menu.cpp Menu.h Udp.cpp Udp.h Socket.cpp Socket.h Client.cpp Client.h)
-add_executable(Taxi ${SOURCE_FILES} Test/PointTest.cpp)
-target_link_libraries(Taxi gtest gtest_main)
-target_link_libraries(Taxi ${Boost_LIBRARIES})
+add_executable(Main ${core_sockets} Main.cpp)
+add_executable(Client ${core_sockets} Client.cpp)
 
-#if(Boost_FOUND)
-
-    #target_link_libraries(BoostTest ${Boost_LIBRARIES})
+target_link_libraries(Main   ${Boost_LIBRARIES})
+target_link_libraries(Client  ${Boost_LIBRARIES})
 
 #endif()
