@@ -87,9 +87,7 @@ public:
 
     void setRoute(Trip* trip);
 
-    virtual void findClosestDriver(State* start ,State* rideStart, Grid* grid) = 0;
-
-    virtual bool move(ITaxiCab cab) = 0;
+    virtual State* move(State* start ,State* rideStart, Grid* grid) = 0;
 
     friend class boost::serialization::access;
     template<class Archive>

@@ -164,27 +164,17 @@ void Menu:: online(Grid* grid, Socket* socket) {
                         }
                     }
 
-                    for (int i = 0; i < taxiCenter->getTrips().size(); i++) {
-
-                        //get first trip in vector of trips that isn't taken
-                        Trip *trip = taxiCenter->getTrips().at(0);
-                        // call trip creator to find closest driver to passenger location
-                        driver = taxiCenter->tripCreator(trip);
-
-                        /**
-                         * serialize trip into buffer in order to send to client
-                         */
-                        std::string serial_str;
-                        boost::iostreams::back_insert_device<std::string> inserter(serial_str);
-                        boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
-                        boost::archive::binary_oarchive oa(s);
-                        oa << trip;
-                        s.flush();
-                        socket->sendData(serial_str);
-                        serial_str.clear();
-
-                    }
                 }
+                /**
+                              * deserialize buffer into string "waiting for move"
+                              */
+                socket->reciveData(buffer, sizeof(buffer));
+                std::string receive(buffer, sizeof(buffer));
+                boost::iostreams::basic_array_source<char> device(receive.c_str(), receive.size());
+                boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s3(device);
+                boost::archive::binary_iarchive ia(s3);
+                ia >> receive;
+                receive.clear();
                 break;
 
             }
@@ -288,53 +278,56 @@ void Menu:: online(Grid* grid, Socket* socket) {
                 break;
             }
             case 9 : {
-
+                State* newPosition;
+                int x;
+                char buffer[1024];
                 timer++;
-
-
-                /**
-                 * deserialize buffer into string "waiting for move"
-                 */
-                string check = "waiting for move";
-                string receive;
-                boost::iostreams::basic_array_source<char> device(serial_str.c_str(), serial_str.size());
-                boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s2(device);
-                boost::archive::binary_iarchive ia(s2);
-                ia >> receive;
-                serial_str.clear();
-
-                if( receive == check) {
-                    //if driver has no trip and it is time for a trip to begin assign driver a trip
-                    if (driver->isOnTrip() == false && trip.timeofstart == timer) {
-                        for (int i = 0; i < taxiCenter->getTrips().size(); i++) {
-                            Trip *trip = taxiCenter->getTrips().at(i);
-                            // call trip creator for the driver to send him to final location
-                            taxiCenter->tripCreator(trip);
-                            // if driver is on a trip and timer allows movement.
+                Trip *trip;
+                //if driver has no trip and it is time for a trip to begin assign driver a trip
+                if (driver->isOnTrip() == false ) {
+                    for (int i = 0; i < taxiCenter->getTrips().size(); i++) {
+                        if (taxiCenter->getTrips().at(i)->getHappening() == false) {
+                            trip = taxiCenter->getTrips().at(i);
+                            x = i;
                         }
-                        // updates driver's taxi to move to the next position in bfs route
-                    } else if (driver->isOnTrip() == true && trip.timeofstart < timer && !endOfRoute) {
-                        endOfRoute = driver->getTaxiCabInfo()->move(*driver->getTaxiCabInfo());
-                        //if we have reached end of route for the driver
-                    } else if (endOfRoute == true && driver->isOnTrip() == true) {
-                        // after setting to false, next trip will override old trip info
-                        driver->setOnTrip(false);
+                        if (trip->getTimeOfStart() == timer) {
+                            driver->setOnTrip(true);
+                            /*
+                               * serialize trip into buffer in order to send to client
+                            */
+                            std::string serial_str;
+                            boost::iostreams::back_insert_device<std::string> inserter(serial_str);
+                            boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
+                            boost::archive::binary_oarchive oa(s);
+                            oa << trip;
+                            s.flush();
+                            socket->sendData(serial_str);
+                            serial_str.clear();
+                            break;
+                        }
                     }
                 }
 
-                /**
-                * serialize trip into buffer in order to send to client
-                */
-                std::string serial_str;
-                boost::iostreams::back_insert_device<std::string> inserter(serial_str);
-                boost::iostreams::stream<boost::iostreams::back_insert_device<std::string> > s(inserter);
-                boost::archive::binary_oarchive oa(s);
-                oa << driver;
-                s.flush();
-                socket->sendData(serial_str);
-                serial_str.clear();
+                else if (driver->isOnTrip() == true ) {
+                    State* end = trip->getdest();
+                    Grid* grid = trip->getGrid();
+                    State* cabState = driver->getTaxiCabInfo()->getLocation();
+                    newPosition = driver->getTaxiCabInfo()->move(cabState,end,grid);
 
+                    //serialize newPosition
+
+
+                }
+                //if we have reached end of route for the driver
+                if (newPosition == trip->getdest()) {
+                    // after setting to false, next trip will override old trip info
+                    driver->setOnTrip(false);
+                    //erase the trip
+                    taxiCenter->getTrips().erase(taxiCenter->getTrips().begin()+x);
+                    delete trip;
+                }
             }
+                break;
             // no default requirement
         }
     }

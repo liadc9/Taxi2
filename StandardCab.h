@@ -18,9 +18,7 @@ public:
                 State* location, bool hasDriver, vector<Point> route):ITaxiCab(Cab_ID,distance_made,color,
                                           model,coeficient,speed,location, hasDriver, route){};
 
-    void findClosestDriver(State* start,State* rideStart,Grid* grid);
-
-    bool move(ITaxiCab cab);
+    State* move(State* start,State* rideStart,Grid* grid);
 
     };
 
