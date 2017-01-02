@@ -13,6 +13,7 @@
 class LuxuryCab: public ITaxiCab {
 
 public:
+    LuxuryCab():ITaxiCab(){};
     LuxuryCab(int Cab_ID, int distance_made, Color color, Model model, int coeficient,
               int speed, State* location, bool hasDriver, vector<Point> route):ITaxiCab(Cab_ID,distance_made,color,
                                                     model,coeficient,speed,location, hasDriver, route){} ;

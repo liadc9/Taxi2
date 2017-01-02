@@ -13,13 +13,19 @@
 class StandardCab: public ITaxiCab {
 
 public:
-
+    StandardCab():ITaxiCab(){};
     StandardCab(int Cab_ID, int distance_made, Color color, Model model, int coeficient, int speed,
                 State* location, bool hasDriver, vector<Point> route):ITaxiCab(Cab_ID,distance_made,color,
                                           model,coeficient,speed,location, hasDriver, route){};
 
     State* move(State* start,State* rideStart,Grid* grid);
+    friend class boost::serialization::access;
+    template<class Archive>
+    void  serialize(Archive &ar, const unsigned int version)
+    {
+        ar & boost::serialization::base_object<ITaxiCab>(*this);
 
+    }
     };
 
 

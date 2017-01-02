@@ -1,6 +1,9 @@
 /**
  * This is the main Class which is used in order to run the BFS algorithm on the grid.
  */
+#include <iostream>
+#include <fstream>
+#include <sstream>
 #include "src/Point.h"
 #include <iostream>
 #include <vector>
@@ -14,10 +17,22 @@
 #include "src/Menu.h"
 #include "src/sockets/Udp.h"
 //#include <gtest/gtest.h>
-
+#include <boost/archive/text_oarchive.hpp>
+#include <boost/archive/text_iarchive.hpp>
+#include <boost/tokenizer.hpp>
+#include <boost/algorithm/string/predicate.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/assign/list_of.hpp>
+#include <boost/algorithm/string.hpp>
+#include <boost/iostreams/device/back_inserter.hpp>
+#include <boost/iostreams/stream.hpp>
+#include <boost/archive/binary_oarchive.hpp>
+#include <boost/archive/binary_iarchive.hpp>
+#include <boost/serialization/export.hpp>
 
 using namespace std;
 
+BOOST_CLASS_EXPORT_GUID(StandardCab,"StandardCab")
 /**
  * This is the main function, it is used to control the flow of the program.
  * it calls the parser to parse arguments, calls the grid class to create a grid.

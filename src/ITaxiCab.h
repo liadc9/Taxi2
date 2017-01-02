@@ -103,6 +103,7 @@ public:
         ar & hasDriver;
     }
 };
+BOOST_SERIALIZATION_ASSUME_ABSTRACT(ITaxiCab)
 
 
 #endif //TAXI_TAXICAB_H

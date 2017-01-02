@@ -15,6 +15,7 @@
 #include <boost/iostreams/stream.hpp>
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/archive/binary_iarchive.hpp>
+#include <boost/serialization/export.hpp>
 #include "Menu.h"
 #include "Parser.h"
 #include "Driver.h"
@@ -25,8 +26,9 @@
 #include "ITaxiCab.h"
 
 
-using namespace std;
 
+
+using namespace std;
 int id;
 int age;
 char status;
@@ -73,6 +75,7 @@ Menu:: Menu(){
 void Menu:: online(Grid* grid, Socket* socket) {
     string serial_str;
     Driver *driver;
+    Driver* driver1;
     int choice = 0;
     TaxiCenter *taxiCenter;
     taxiCenter = new TaxiCenter();
@@ -109,19 +112,19 @@ void Menu:: online(Grid* grid, Socket* socket) {
                     boost::archive::binary_iarchive ia(s2);
                     ia >> driver;
                     serial_str.clear();
-
+                    //put the driver at taxicenter
+                    taxiCenter->AddDriver(driver);
                     Status stat;
                     double satisfaction = 0;
-
                     //assign the driver the correct taxi according to vehicle id
                     for (int i = 0; i < taxiCenter->getTaxis().size(); i++) {
                         if (taxiCenter->getTaxis().at(i)->getCab_ID() == vehicle) {
                             taxiID = taxiCenter->getTaxis().at(i)->getCab_ID();
-                            Driver *driver = new Driver(id, age, expirience, satisfaction,
+                            Driver *driver1 = new Driver(id, age, expirience, satisfaction,
                                                         taxiCenter->getTaxis().at(i), stat, NULL, false, taxiID);
                             // now the cab has a driver
                             taxiCenter->getTaxis().at(i)->setHasDriver(true);
-                            taxiCenter->AddDriver(driver);
+                          //  taxiCenter->AddDriver(driver1);
 
                             /**
                              * serialize ItaxiCab into buffer in order to send to client
@@ -141,12 +144,12 @@ void Menu:: online(Grid* grid, Socket* socket) {
                     for (int i = 0; i < taxiCenter->getLuxTaxis().size(); i++) {
                         if (taxiCenter->getLuxTaxis().at(i)->getCab_ID() == vehicle) {
                             taxiID = taxiCenter->getLuxTaxis().at(i)->getCab_ID();
-                            Driver *driver = new Driver(id, age, expirience, satisfaction,
-                                                        taxiCenter->getTaxis().at(i), stat, NULL, false, taxiID);
+                            Driver *driver1 = new Driver(id, age, expirience, satisfaction,
+                                                        taxiCenter->getLuxTaxis().at(i), stat, NULL, false, taxiID);
                             // now the cab has a driver
                             taxiCenter->getLuxTaxis().at(i)->setHasDriver(true);
-                            taxiCenter->AddDriver(driver);
-                            int idCab = driver->getTaxiCabInfo()->getCab_ID();
+                           // taxiCenter->AddDriver(driver);
+                            int idCab = driver1->getTaxiCabInfo()->getCab_ID();
 
                             /**
                              * serialize ItaxiCab into buffer in order to send to client
@@ -166,15 +169,16 @@ void Menu:: online(Grid* grid, Socket* socket) {
 
                 }
                 /**
-                              * deserialize buffer into string "waiting for move"
-                              */
+                 * deserialize buffer into string "waiting for move"
+                 */
+                string ss;
                 socket->reciveData(buffer, sizeof(buffer));
                 std::string receive(buffer, sizeof(buffer));
-                boost::iostreams::basic_array_source<char> device(receive.c_str(), receive.size());
+                /*boost::iostreams::basic_array_source<char> device(receive.c_str(), receive.size());
                 boost::iostreams::stream<boost::iostreams::basic_array_source<char> > s3(device);
                 boost::archive::binary_iarchive ia(s3);
-                ia >> receive;
-                receive.clear();
+                ia >> ss;
+                receive.clear();*/
                 break;
 
             }
@@ -278,20 +282,21 @@ void Menu:: online(Grid* grid, Socket* socket) {
                 break;
             }
             case 9 : {
+                Driver* driver1 = taxiCenter->getDrivers().at(0);
                 State* newPosition;
                 int x;
                 char buffer[1024];
                 timer++;
                 Trip *trip;
                 //if driver has no trip and it is time for a trip to begin assign driver a trip
-                if (driver->isOnTrip() == false ) {
+                if (taxiCenter->getDrivers().at(0)->isOnTrip() == false ) {
                     for (int i = 0; i < taxiCenter->getTrips().size(); i++) {
                         if (taxiCenter->getTrips().at(i)->getHappening() == false) {
                             trip = taxiCenter->getTrips().at(i);
                             x = i;
                         }
                         if (trip->getTimeOfStart() == timer) {
-                            driver->setOnTrip(true);
+                            driver1->setOnTrip(true);
                             /*
                                * serialize trip into buffer in order to send to client
                             */
@@ -309,11 +314,11 @@ void Menu:: online(Grid* grid, Socket* socket) {
                     }
                 }
 
-                 if (driver->isOnTrip() == true ) {
+                 if (driver1->isOnTrip() == true ) {
                     State* end = trip->getdest();
                     Grid* grid = trip->getGrid();
-                    State* cabState = driver->getTaxiCabInfo()->getLocation();
-                    newPosition = driver->getTaxiCabInfo()->move(cabState,end,grid);
+                    State* cabState = driver1->getTaxiCabInfo()->getLocation();
+                    newPosition = driver1->getTaxiCabInfo()->move(cabState,end,grid);
 
                     //serialize newPosition as point
                     Point* position = new Point(newPosition->getState().getX(),newPosition->getState().getY());
@@ -331,7 +336,7 @@ void Menu:: online(Grid* grid, Socket* socket) {
                 if (newPosition->getState().getX() == trip->getdest()->getState().getX() &&
                         newPosition->getState().getY() == trip->getdest()->getState().getY()) {
                     // after setting to false, next trip will override old trip info
-                    driver->setOnTrip(false);
+                    driver1->setOnTrip(false);
                     //erase the trip
                     taxiCenter->getTrips().erase(taxiCenter->getTrips().begin()+x);
                     delete trip;
